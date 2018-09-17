@@ -1,2 +1,7 @@
-# CitySecrets
-A photo-driven app that helps you explore little known features of cities you visit.
+Readme Here!
+=====
+
+## Get Started
+1. First step
+1. Second step
+...and so on.

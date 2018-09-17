@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/team-anchor/city-secrets-app#readme",
   "dependencies": {
+    "dotenv": "^6.0.0",
     "eslint": "^5.4.0",
     "prop-types": "^15.6.2",
     "query-string": "^6.1.0",

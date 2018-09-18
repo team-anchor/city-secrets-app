@@ -1,4 +1,4 @@
-import { loading, LOAD_START } from './reducers';
+import { loading, LOAD_START, LOAD_END } from './reducers';
 
 describe('Loading reducer', () => {
   it('loads initial state', () => {
@@ -9,5 +9,10 @@ describe('Loading reducer', () => {
   it('starts load', () => {
     const state = loading(false, { type: LOAD_START });
     expect(state).toBe(true);
+  });
+
+  it('ends load', () => {
+    const state = loading(true, { type: LOAD_END });
+    expect(state).toBe(false);
   });
 });

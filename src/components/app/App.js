@@ -18,7 +18,8 @@ class App extends Component {
           <main>
             <Switch>
               <Route exact path="/"/>
-              <Route exact path="/search"/>
+              <Route exact path="/about"/>
+              <Route exact path="/profile"/>
               <Redirect to="/"/>
             </Switch>
           </main>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Search from '../search/Search';
 import { Link, Route } from 'react-router-dom';
 import styles from './Header.css';
 
@@ -27,7 +28,7 @@ class Header extends Component {
         </section>
 
         <section className="search-container">
-          <Route/>
+          <Route component={Search}/>
         </section>
 
       </div>

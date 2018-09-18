@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, Route } from 'react-router-dom';
+import { NavLink, Route } from 'react-router-dom';
 import styles from './Header.css';
 
 class Header extends Component {
@@ -10,18 +10,20 @@ class Header extends Component {
       <div className={styles.header}>
 
         <section className="header-container">
-        
           <nav className="topnav">
             <ul>
-              <a>
-                <Link to="/">Home</Link>
-              </a>
-              <a>
-                <Link to="/about">About</Link>
-              </a>
-              <a>
-                <Link to="/profile">Profile</Link>
-              </a>
+              <li>
+                <NavLink to="/">Home</NavLink>
+              </li>
+              <li>
+                <NavLink to="/about">About</NavLink>
+              </li>
+              <li>
+                <NavLink to="/profile">Profile</NavLink>
+              </li>
+              <li>
+                <NavLink to="/auth">Auth</NavLink>
+              </li>
             </ul>
           </nav>
         </section>

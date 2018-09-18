@@ -15,15 +15,15 @@ class Credentials extends PureComponent {
     return (
       <form>
         <FormControl label="name">
-          <input name="name" value={name} onChange/>
+          <input name="name" value={name}/>
         </FormControl>
 
         <FormControl label="email">
-          <input name="email" value={email} onChange/>
+          <input name="email" value={email}/>
         </FormControl>
 
         <FormControl label="password">
-          <input name="password" value={password} onChange/>
+          <input name="password" value={password}/>
         </FormControl>
 
         <button>Test</button>

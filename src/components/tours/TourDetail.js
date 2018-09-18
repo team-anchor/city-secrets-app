@@ -1,0 +1,1 @@
+//this is the tour detail page

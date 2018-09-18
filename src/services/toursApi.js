@@ -2,7 +2,6 @@ import { get } from './request';
 
 const URL = '/api';
 const TOURS_URL = `${URL}/tours`;
-const EVERYTHING_URL = `${TOURS_URL}`;
 
 const getUrl = url => {
   const json = window.localStorage.getItem(url);
@@ -18,18 +17,16 @@ const getUrl = url => {
     });
 };
 
-export function search({ search }, { page }) {
+export function search({ search }) {
   const searchTerm = `${search}`;
-  const paging = `${page}`;
-
-  return get(`${EVERYTHING_URL}${searchTerm}${paging}`);
+  return get(`${TOURS_URL}${searchTerm}`);
 }
 
-export function getMovies(id) {
+export function getTours(id) {
   if(id) {
-    return getUrl(`${EVERYTHING_URL}/${id}`);
+    return getUrl(`${TOURS_URL}/${id}`);
   }
   else {
-    return getUrl(EVERYTHING_URL);
+    return getUrl(TOURS_URL);
   }
 }

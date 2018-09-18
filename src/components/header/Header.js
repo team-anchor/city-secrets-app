@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink, Route } from 'react-router-dom';
+import Search from '../search/Search';
 import styles from './Header.css';
 
 class Header extends Component {
@@ -29,7 +30,7 @@ class Header extends Component {
         </section>
 
         <section className="search-container">
-          <Route/>
+          <Route component={Search}/>
         </section>
 
       </div>

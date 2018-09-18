@@ -43,8 +43,8 @@ class Results extends Component {
     
     searchTours({ search })
       .then(
-        ({ Search }) => {
-          this.setState({ tours: Search });
+        ({ name }) => {
+          this.setState({ tours: name });
         },
         err => {
           this.setState({ error: err.message });
@@ -59,6 +59,7 @@ class Results extends Component {
 
     const { tours, loading, error } = this.state;
     const { searchTerm } = this;
+    console.log(tours);
 
     return (
       <section className="mlist">

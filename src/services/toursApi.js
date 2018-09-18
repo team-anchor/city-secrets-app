@@ -1,6 +1,7 @@
 import { get } from './request';
 
 const URL = '/api';
+const AUTH_URL = `${URL}/auth`;
 const TOURS_URL = `${URL}/tours`;
 
 const getUrl = url => {
@@ -30,3 +31,11 @@ export function getTours(id) {
     return getUrl(TOURS_URL);
   }
 }
+
+export const verifyUser = token => {
+  return get(`${AUTH_URL}/verify`, {
+    headers: {
+      Authorization: token
+    }
+  });
+};

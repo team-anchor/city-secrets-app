@@ -5,11 +5,11 @@ const FAVORITES_URL = `${URL}/favorites`;
 
 const getFavoriteUrl = FAVORITES_URL;
 
-export const addFavorite = ({ id, title, featured_image, location, description }) => {
+export const addFavorite = ({ id, name, featured_image, location, description }) => {
   const url = getFavoriteUrl(id);
   return post(url, {
     id,
-    title,
+    name,
     featured_image,
     location,
     description

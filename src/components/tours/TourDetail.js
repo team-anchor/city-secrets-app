@@ -55,12 +55,12 @@ export default class TourDetail extends Component {
     const { tour, favorite } = this.state;
     if(!tour) return null;
 
-    const { title, featured_image, location, description } = tour;
+    const { name, featured_image, location, description } = tour;
 
     return (
       <div className={styles.tourDetail}>
         <img src={featured_image}/>
-        <h2>{title}</h2>
+        <h2>{name}</h2>
         <p><strong>Location:</strong> {location}</p>
         <p><strong>description:</strong> {description}</p>
         <button onClick={this.handleClick}>

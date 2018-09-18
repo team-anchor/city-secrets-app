@@ -6,6 +6,8 @@ export function user(state = null, { type, payload }) {
   switch(type) {
     case USER_AUTH:
       return payload;
+    case LOGOUT:
+      return null;
     default:
       return state;
   }

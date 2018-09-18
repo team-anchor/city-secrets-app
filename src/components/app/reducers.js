@@ -18,6 +18,8 @@ export function error(state = null, { type, payload }) {
   switch(type) {
     case ERROR:
       return payload;
+    case LOAD_START:
+      return null;
     default:
       return state;
   }

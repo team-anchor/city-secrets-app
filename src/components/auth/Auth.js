@@ -5,8 +5,13 @@ import { Switch, Route, Link, Redirect } from 'react-router-dom';
 // import { signin, signup } from './actions';
 // import { getUser } from './reducers';
 import Credentials from './Credentials';
+// import testUpload from '../tours/UploadImage';
 
 class Auth extends PureComponent {
+  // componentDidMount() {
+  //   testUpload();
+  // }
+
   render() { 
     return (
       <div>

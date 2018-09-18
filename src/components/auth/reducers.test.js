@@ -1,4 +1,4 @@
-import { user, USER_AUTH, LOGOUT } from './reducers';
+import { user, getUser, USER_AUTH, LOGOUT } from './reducers';
 
 describe('User reducer', () => {
   it('initializes to null', () => {
@@ -15,5 +15,10 @@ describe('User reducer', () => {
   it('logs out a user', () => {
     const state = user({}, { type: LOGOUT });
     expect(state).toBeNull();
+  });
+
+  it('gets user from state', () => {
+    const user = {};
+    expect(getUser({ user })).toBe(user);
   });
 });

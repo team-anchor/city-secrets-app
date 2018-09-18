@@ -8,9 +8,9 @@ import Credentials from './Credentials';
 // import testUpload from '../tours/UploadImage';
 
 class Auth extends PureComponent {
-  // componentDidMount() {
-  //   testUpload();
-  // }
+  componentDidMount() {
+    // testUpload();
+  }
 
   render() { 
     return (

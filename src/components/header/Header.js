@@ -27,11 +27,12 @@ class Header extends Component {
               </li>
             </ul>
           </nav>
+          <section className="search-container">
+            <Route component={Search}/>
+          </section>
         </section>
 
-        <section className="search-container">
-          <Route component={Search}/>
-        </section>
+        
 
       </div>
     );

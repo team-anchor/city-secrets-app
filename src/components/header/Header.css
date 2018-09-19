@@ -1,0 +1,30 @@
+.header-container {
+  display: flex;
+  justify-items: right;
+  justify-content: right;
+  flex-direction: row-reverse;
+  height: 10%;
+  background-color: #005874;
+  color: #fff;
+}
+
+* {
+  font-family: 'Encode Sans Condensed', sans-serif;
+  font-weight: 400;
+}
+
+.topnav li {
+  border: 1px solid white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-right: 10px;
+  list-style: none;
+  display: inline-block;
+}
+
+.topnav a {
+  color: #fff;
+  text-decoration: none;
+}

@@ -8,7 +8,7 @@ class Tour extends Component {
       <div className={styles.Tour}>
         <div className="tourtile">
           <div className="star">
-            <i className="far fa-star"></i>
+            <i className="far fa-star fa-2x"></i>
           </div>
           <img className="cover" src="http://www.worldwidewalrusweb.com/bc2/europe_2.jpg" />
           <div className="textcontainer">

@@ -9,8 +9,10 @@ class Home extends Component {
     return ( 
       <section className={styles.home}>
         <div className="splash-page">
-          <h1>CitySecrets</h1>
-          <h2>Discover what surrounds you! Curated walks to discover secrets in cities around the world.</h2>
+          <div className="headline-container">
+            <h1>CitySecrets</h1>
+            <h2>Discover what surrounds you!<br />Curated walks to discover secrets in cities around the world.</h2>
+          </div>
         </div>
       </section>
 

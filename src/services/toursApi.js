@@ -19,13 +19,12 @@ const getUrl = url => {
 
 export function search({ search }) {
   const searchTerm = `&name=${search}`;
-
   return get(`${TOURS_URL}/${searchTerm}`);
 }
 
 export function getTours(id) {
   if(id) {
-    return getUrl(`${TOURS_URL}/${id}`);
+    return getUrl(`${TOURS_URL}/id/${id}`);
   }
   else {
     return getUrl(TOURS_URL);

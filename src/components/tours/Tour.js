@@ -10,15 +10,17 @@ export default class Tour extends Component {
 
     render() {
       const { tour } = this.props;
-      const { name, description, featured_image, id, stops } = tour;
-      console.log('*** TOUR STOPS ***', tour.stops);
+      const { name, description, id, stops } = tour;
 
       return (
         <li>
           <Link to={`/tours/${id}`}>
-            {featured_image !== 'N/A'
-              ? <img src={featured_image}/>
-              : <img src='https://www.nationalpetregister.org/assets/img/no-photo.jpg'/>}
+            {stops.map((stop, i) => {
+              return (
+                <p key={i}>{stop.location.picture}</p>
+              );
+            }
+            )}
             <p><strong>{name}</strong> ({description})</p>
             {stops.map((stop, i) => {
               return (

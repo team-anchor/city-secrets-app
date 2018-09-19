@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { signin, signup } from './actions';
 import { getUser } from './reducers';
 import Credentials from './Credentials';
+import styles from './Auth.css';
 
 class Auth extends PureComponent {
   static propTypes = {
@@ -20,7 +21,7 @@ class Auth extends PureComponent {
     if(user) return <Redirect to={redirect}/>;
 
     return (
-      <div>
+      <div className={styles.auth}>
         <h2>Auth Component</h2>
         <Switch>
           <Route path="/auth/signin" component={() => (

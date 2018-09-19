@@ -43,8 +43,8 @@ class Results extends Component {
     
     searchTours({ search })
       .then(
-        ({ Search }) => {
-          this.setState({ tours: Search });
+        ({ search }) => {
+          this.setState({ tours: search });
         },
         err => {
           this.setState({ error: err.message });

@@ -25,7 +25,7 @@ const getUrl = url => {
 
 export function search({ search }) {
   const searchTerm = `${search}`;
-  return get(`${TOURS_URL}${searchTerm}`);
+  return get(`${TOURS_URL}/${searchTerm}`);
 }
 
 export function getTours(id) {

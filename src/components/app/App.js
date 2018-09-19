@@ -6,6 +6,7 @@ import { tryLoadUser } from '../auth/actions';
 import { getCheckedAuth } from '../auth/reducers';
 import Header from '../header/Header';
 import Auth from '../auth/Auth';
+import Results from '../tours/Results';
 
 class App extends Component {
   static propTypes = {
@@ -31,7 +32,7 @@ class App extends Component {
               <Switch>
                 <Route exact path="/"/>
                 <Route path="/auth" component={Auth}/>
-                <Route exact path="/search"/>
+                <Route exact path="/search" component={Results}/>
                 <Route exact path="/about"/>
                 <Route exact path="/profile"/>
                 <Redirect to="/"/>

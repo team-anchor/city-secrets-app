@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { tryLoadUser } from '../auth/actions';
 import { getCheckedAuth } from '../auth/reducers';
 import Header from '../header/Header';
+import Home from '../home/Home';
 import Auth from '../auth/Auth';
 import Results from '../tours/Results';
 
@@ -39,6 +40,7 @@ class App extends Component {
               </Switch>
             }
           </main>
+          <Home />
     
         </div>
       </Router>

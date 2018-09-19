@@ -5,7 +5,7 @@ import { getTours } from '../../services/toursApi';
 import { addFavorite, getFavorite, removeFavorite } from '../../services/favoritesApi';
 import styles from './TourDetail.css';
 
-export default class TourDetail extends Component {
+export default class Tour extends Component {
 
   state = {
     tour: null, 
@@ -55,13 +55,13 @@ export default class TourDetail extends Component {
     const { tour, favorite } = this.state;
     if(!tour) return null;
 
-    const { title, featured_image, location, description } = tour;
+    const { name, description } = tour;
 
     return (
       <div className={styles.tourDetail}>
-        <img src={featured_image}/>
-        <h2>{title}</h2>
-        <p><strong>Location:</strong> {location}</p>
+        <img />
+        <h2>{name}</h2>
+        <p><strong>Location:</strong></p>
         <p><strong>description:</strong> {description}</p>
         <button onClick={this.handleClick}>
           {favorite ? 'Remove from' : 'Add to' } Favorites

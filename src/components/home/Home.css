@@ -1,0 +1,63 @@
+body {
+  background-image: url("../../assets/cover-image-large.jpg");
+}
+
+@media screen and (max-width: 1200px) {
+  .splash-page h1 {
+    text-align: center;
+    font-size: 5em;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+    
+  }
+  .splash-page h2 {
+    text-align: center;
+    font-size: 1.6em;
+    font-weight: 400;
+    color: rgba(255, 255, 255, .7);
+    line-height: 1.6em;
+  }
+  
+}
+
+@media screen and (min-width: 1201px) {
+  .splash-page h1 {
+    text-align: center;
+    font-size: 7em;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+    
+  }
+  .splash-page h2 {
+    text-align: center;
+    font-size: 2.1em;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 1);
+    line-height: 1.7em;
+    text-shadow: 2px 2px 3px black; 
+    
+  }
+  
+}
+
+.splash-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+}
+
+.headline-container {
+  flex: 1;
+  margin-top: 10%;
+}
+
+
+
+
+
+
+
+

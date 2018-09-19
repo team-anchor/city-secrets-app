@@ -15,10 +15,10 @@ export default class Tours extends Component {
     return (
       <ul className={styles.tours}>
 
-        <Tour />
-        {/* {tours.map((tour, i) => (
+        {/* <Tour /> */}
+        {tours.map((tour, i) => (
           <Tour key={i} tour={tour}/>
-        ))} */}
+        ))}
       </ul>
     );
   }

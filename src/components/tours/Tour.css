@@ -46,3 +46,8 @@ img.cover {
   z-index: 99;
 }
 
+html {
+  background-color: #e6e6d4;
+  background-image: url("../../assets/asfalt-dark.png");
+
+}

@@ -17,7 +17,7 @@ const authChecked = () => ({ type: CHECKED_AUTH });
 export const tryLoadUser = () => dispatch => {
   const user = getStoredUser();
   if(!user || !user.token) return dispatch(authChecked());
-
+  
   verifyUser(user.token)
     .then(() => dispatch({
       type: USER_AUTH,

@@ -26,6 +26,10 @@ class Credentials extends PureComponent {
           <input name="password" value={password}/>
         </FormControl>
 
+        <FormControl label="password">
+          <input name="password" value={password}/>
+        </FormControl>
+
         <button>Test</button>
       </form>
     );

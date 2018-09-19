@@ -5,6 +5,7 @@ import { Switch, Route, Link, Redirect } from 'react-router-dom';
 // import { signin, signup } from './actions';
 // import { getUser } from './reducers';
 import Credentials from './Credentials';
+import styles from './Auth.css';
 
 class Auth extends PureComponent {
   componentDidMount() {
@@ -13,7 +14,7 @@ class Auth extends PureComponent {
 
   render() { 
     return (
-      <div>
+      <div className={styles.auth}>
         <h2>Auth Component</h2>
         <Switch>
           <Route path="/auth/signin" component={() => (

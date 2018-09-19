@@ -1,5 +1,6 @@
 body {
   background-image: url("../../assets/cover-image-large.jpg");
+  
 }
 
 @media screen and (max-width: 500px) {
@@ -19,11 +20,17 @@ body {
     line-height: 1.4em;
   }
 
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+  }
+  
   .headline-container {
     flex: 1;
     padding-right: 5%;
     padding-left: 5%;
-    margin-top: 20%;
   }
 
   body {
@@ -41,6 +48,14 @@ body {
     margin: 0;
     
   }
+
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 150px;
+  }
+
   .splash-page h2 {
     text-align: center;
     font-size: 1.6em;
@@ -60,6 +75,13 @@ body {
     margin: 0;
     
   }
+
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+  }
   .splash-page h2 {
     text-align: center;
     font-size: 2.1em;
@@ -76,12 +98,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100vh;
   max-width: 100%;
 }
 
 .headline-container {
   flex: 1;
-  margin-top: 10%;
+  align-items: center;
 }
 
 

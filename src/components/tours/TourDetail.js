@@ -5,7 +5,7 @@ import { getTours } from '../../services/toursApi';
 import { addFavorite, getFavorite, removeFavorite } from '../../services/favoritesApi';
 import styles from './TourDetail.css';
 
-export default class TourDetail extends Component {
+export default class Tour extends Component {
 
   state = {
     tour: null, 

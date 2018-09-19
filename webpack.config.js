@@ -17,7 +17,10 @@ module.exports = {
   devtool: 'inline-source-map',
   devServer: {
     contentBase: `./${buildDir}`,
-    historyApiFallback: true
+    historyApiFallback: true,
+    proxy: {
+      '/api': 'http://localhost:3000'
+    }
   },
   plugins: [
     new CleanPlugin(`${path}/bundle.*.js`),

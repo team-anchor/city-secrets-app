@@ -1,7 +1,7 @@
 import { get } from './request';
 
 const URL = '/api';
-const TOURS_URL = `${URL}/tours`;
+const TOURS_URL = `${URL}/tours/name`;
 
 const getUrl = url => {
   const json = window.localStorage.getItem(url);
@@ -18,7 +18,8 @@ const getUrl = url => {
 };
 
 export function search({ search }) {
-  const searchTerm = `&name=${search}`;
+  console.log('SSS', search);
+  const searchTerm = `${search}`;
   return get(`${TOURS_URL}/${searchTerm}`);
 }
 

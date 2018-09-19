@@ -12,7 +12,7 @@ class App extends Component {
       <Router>
         <div>
           <header>
-            <Header/>
+            <Header onSearch={this.handleSearch}/>
           </header>
           
           <main>
@@ -20,7 +20,6 @@ class App extends Component {
               <Route exact path="/"/>
               <Route path="/auth" component={Auth}/>
               <Route exact path="/search" component={Results}/>
-              <Route exact path="/search"/>
               <Route exact path="/about"/>
               <Route exact path="/profile"/>
               <Redirect to="/"/>

@@ -44,6 +44,7 @@ class Results extends Component {
     searchTours({ search })
       .then(
         ({ name }) => {
+          console.log('testing', name);
           this.setState({ tours: name });
         },
         err => {

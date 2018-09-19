@@ -28,3 +28,13 @@
   color: #fff;
   text-decoration: none;
 }
+
+.topnav a:hover {
+  color: #ffbe00;
+  text-decoration: none;
+}
+
+.topnav a:active {
+  color: #ffbe00;
+  text-decoration: none;
+}

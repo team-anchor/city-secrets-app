@@ -24,7 +24,6 @@ const getUrl = url => {
 };
 
 export function search({ search }) {
-  console.log('API Search', search);
   return get(`${TOURS_URL}/name/${search}`);
 }
 

@@ -3,7 +3,7 @@ import styles from '../tours/Tour.css';
 
 class Tour extends Component {
   
-  render() { 
+/*  render() { 
     return ( 
       <div className={styles.Tour}>
         < a href="#"> 
@@ -19,6 +19,35 @@ class Tour extends Component {
             
           </div>
         </a>
-      </div>
+      </div> 
+*/
+  
+    static propTypes = {
+      tour: PropTypes.object.isRequired
+    };
 
+    render() {
+      const { tour } = this.props;
+      const { name, description, id, stops } = tour;
+
+      return (
+        <li>
+          <Link to={`/tours/${id}`}>
+            {stops.map((stop, i) => {
+              return (
+                <p key={i}>{stop.location.picture}</p>
+              );
+            }
+            )}
+            <p><strong>{name}</strong> ({description})</p>
+            {stops.map((stop, i) => {
+              return (
+                <p key={i}>{stop.location.address}</p>
+              );
+            }
+            )}
+          </Link>
+        </li>
+      );
+    }
 }

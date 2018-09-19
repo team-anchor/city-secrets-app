@@ -1,0 +1,53 @@
+.tourtile {
+  border: 1px solid #333;
+  max-width: 300px;
+  min-height: 300px;
+  position: relative;
+  -webkit-box-shadow: 0 8px 6px -6px #333;
+	-moz-box-shadow: 0 8px 6px -6px #333;
+	box-shadow: 0 8px 6px -6px #333;
+ }
+
+.textcontainer {
+  background-color: rgba(255, 255, 255, .75);
+  padding-left: 10px;
+  padding-right: 10px;
+  position: absolute;
+  z-index: 99;
+  bottom: 0;
+}
+
+.tourtile h2 {
+  color: #000;
+  font-weight: 700;
+  margin-bottom: 0;
+  margin-top: 5px;
+}
+
+img.cover {
+  object-fit: cover;
+  width: 100%;
+  position: absolute;
+  
+  top: 0;
+}
+
+.tourtile p {
+  color: #000;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.star {
+  color: #ffbe00; 
+  position: absolute;
+  top: 10px;
+  left: 255px;
+  z-index: 99;
+}
+
+html {
+  background-color: #e6e6d4;
+  background-image: url("../../assets/asfalt-dark.png");
+
+}

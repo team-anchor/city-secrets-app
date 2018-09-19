@@ -21,8 +21,4 @@ class Tour extends Component {
         </a>
       </div>
 
-    );
-  }
 }
- 
-export default Tour;

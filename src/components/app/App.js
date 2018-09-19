@@ -26,7 +26,7 @@ class App extends Component {
       <Router>
         <div>
           <header>
-            <Header/>
+            <Header onSearch={this.handleSearch}/>
           </header>
           
           <main>

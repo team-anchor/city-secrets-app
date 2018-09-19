@@ -20,7 +20,7 @@ class Header extends Component {
       <div className={styles.header}>
 
         <section className="header-container">
-          {user && <span>Logged in as {user.user.email}</span>}
+          {user && <span>Logged in as {user.user.name}</span>}
           <nav className="topnav">
             <ul>
               <li>

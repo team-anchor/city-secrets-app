@@ -8,6 +8,7 @@ import Header from '../header/Header';
 import Home from '../home/Home';
 import Auth from '../auth/Auth';
 import Results from '../tours/Results';
+import TourDetail from '../tours/TourDetail';
 
 class App extends Component {
   static propTypes = {
@@ -35,6 +36,7 @@ class App extends Component {
                 <Route path="/auth" component={Auth}/>
                 <Route exact path="/search" component={Results}/>
                 <Route exact path="/about"/>
+                <Route exact path="/tour/:id" component={TourDetail}/>   
                 <Route exact path="/profile"/>
                 <Redirect to="/"/>
               </Switch>

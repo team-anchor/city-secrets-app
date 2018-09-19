@@ -34,6 +34,11 @@ class Header extends Component {
                   <NavLink to="/profile">Profile</NavLink>
                 </li>
               }
+              {user &&
+                <li>
+                  <NavLink to="/tours">Tours</NavLink>
+                </li>
+              }
               <li>
                 {user
                   ? <NavLink to="/" onClick={logout}>Logout</NavLink>

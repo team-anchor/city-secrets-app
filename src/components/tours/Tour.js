@@ -1,26 +1,24 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import styles from '../tours/Tour.css';
 
-export default class Tour extends Component {
+class Tour extends Component {
+  
+  render() { 
+    return ( 
+      <div className={styles.Tour}>
+        < a href="#"> 
+          <div className="tourtile">
+            <div className="star">
+              <i className="far fa-star fa-2x"></i>
+            </div>
+            <img className="cover" src="http://www.worldwidewalrusweb.com/bc2/europe_2.jpg" />
+            <div className="textcontainer">
+              <h2 className="tourhead">Secret Walking Tour</h2>
+              <p className="tour-tile-text">Here is the description of this tour. It is super cool, you should really check it out</p>
+            </div>
+            
+          </div>
+        </a>
+      </div>
 
-    static propTypes = {
-      tour: PropTypes.object.isRequired
-    };
-
-    render() {
-      const { tour } = this.props;
-      const { name, description, featured_image, id } = tour;
-
-      return (
-        <li>
-          <Link to={`/tours/${id}`}>
-            {featured_image !== 'N/A'
-              ? <img src={featured_image}/>
-              : <img src='https://www.nationalpetregister.org/assets/img/no-photo.jpg'/>}
-            <p><strong>{name}</strong> ({description})</p> 
-          </Link>
-        </li>
-      );
-    }
 }

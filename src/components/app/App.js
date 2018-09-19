@@ -1,13 +1,26 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { tryLoadUser } from '../auth/actions';
+import { getCheckedAuth } from '../auth/reducers';
 import Header from '../header/Header';
-import Results from '../tours/Results';
+import Home from '../home/Home';
 import Auth from '../auth/Auth';
+import Results from '../tours/Results';
 
 class App extends Component {
+  static propTypes = {
+    tryLoadUser: PropTypes.func.isRequired,
+    checkedAuth: PropTypes.bool.isRequired
+  };
+
+  componentDidMount() {
+    this.props.tryLoadUser();
+  }
 
   render() {
-    
+    const { checkedAuth } = this.props;
     return (
       <Router>
         <div>
@@ -16,15 +29,18 @@ class App extends Component {
           </header>
           
           <main>
-            <Switch>
-              <Route exact path="/"/>
-              <Route path="/auth" component={Auth}/>
-              <Route exact path="/search" component={Results}/>
-              <Route exact path="/about"/>
-              <Route exact path="/profile"/>
-              <Redirect to="/"/>
-            </Switch>
+            {checkedAuth &&
+              <Switch>
+                <Route exact path="/"/>
+                <Route path="/auth" component={Auth}/>
+                <Route exact path="/search" component={Results}/>
+                <Route exact path="/about"/>
+                <Route exact path="/profile"/>
+                <Redirect to="/"/>
+              </Switch>
+            }
           </main>
+          <Home />
     
         </div>
       </Router>
@@ -32,4 +48,7 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect(
+  state => ({ checkedAuth: getCheckedAuth(state) }),
+  { tryLoadUser }
+)(App);

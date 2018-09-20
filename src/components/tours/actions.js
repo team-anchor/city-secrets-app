@@ -13,7 +13,7 @@ export const loadTours = () => (dispatch, getState) => {
 
 export const addTour = data => {
   return {
-    type: TOUR_ADD,
+    type: TOUR_ADD, 
     payload: postTour(data)
   };
 };

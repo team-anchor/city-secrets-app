@@ -11,7 +11,7 @@ class Tours extends Component {
 
   static propTypes = {
     loadTours: PropTypes.func.isRequired,
-    tours: PropTypes.arrayOf(Object)
+    tours: PropTypes.arrayOf(Object),
   };
 
   componentDidMount() {
@@ -24,11 +24,13 @@ class Tours extends Component {
     return (
       <div>
         {/* <AddTour/> */}
-        <ul className={styles.tours}>
-          {tours.map((tour, i) => (
-            <Tour key={i} tour={tour}/>
-          ))}
-        </ul>
+        <div className={styles.tours}>
+          <ul className="tours-container">
+            {tours.map((tour, i) => (
+              <Tour key={i} tour={tour}/>
+            ))}
+          </ul>
+        </div>
       </div>
     );
   }

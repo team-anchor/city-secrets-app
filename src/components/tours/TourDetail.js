@@ -50,15 +50,15 @@ export default class TourDetail extends Component {
     const { favorite, tour } = this.state;
     if(!tour) return null;
 
-    const { name, description, location } = tour;
+    const { name, description, city, stops } = tour;
     console.log(tour);
 
     return (
       <div className={styles.tourDetail}>
-        <img />
         <h2>{name}</h2>
-        <p><strong>Location:</strong>{location}</p>
-        <p><strong>description:</strong> {description}</p>
+        <p><strong>City: </strong>{city}</p>
+        <p><strong>description: </strong>{description}</p>
+        <img src={stops.picture} />
         <button onClick={this.handleClick}>
           {favorite ? 'Remove from' : 'Add to' } Favorites
         </button>

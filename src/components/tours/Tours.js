@@ -11,7 +11,7 @@ class Tours extends Component {
 
   static propTypes = {
     loadTours: PropTypes.func.isRequired,
-    tours: PropTypes.arrayOf(Object)
+    tours: PropTypes.arrayOf(Object),
   };
 
   componentDidMount() {

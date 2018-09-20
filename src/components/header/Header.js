@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { NavLink, Route } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getUser } from '../auth/reducers';
 import { logout } from '../auth/actions';
@@ -39,6 +39,11 @@ class Header extends Component {
               {user &&
                 <li>
                   <NavLink to="/tours">Tours</NavLink>
+                </li>
+              }
+              {user &&
+                <li>
+                  <NavLink to="/add">Add Tour</NavLink>
                 </li>
               }
               <li>

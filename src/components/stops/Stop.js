@@ -11,8 +11,9 @@ class Stop extends PureComponent {
   };
 
   static propTypes = {
-    stop: PropTypes.object.isRequired,
-    update: PropTypes.func.isRequired
+    stop: PropTypes.object,
+    update: PropTypes.func,
+    tourId: PropTypes.string
   };
 
   handleEdit = () => {
@@ -31,13 +32,14 @@ class Stop extends PureComponent {
 
   render() {
     const { editing } = this.state;
-    const { stop } = this.props;
+    const { stop, tourId } = this.props;
     
     return (
       <div>
         {editing
           ? <StopForm
             stop={stop}
+            tourId={tourId}
             onComplete={this.handleComplete}
             onCancel={this.handleEndEdit}
           />

@@ -9,6 +9,7 @@ import Home from '../home/Home';
 import About from '../about/About';
 import Auth from '../auth/Auth';
 import Results from '../tours/Results';
+import AddTour from '../tours/AddTour';
 import TourDetail from '../tours/TourDetail';
 import Tours from '../tours/Tours';
 
@@ -40,7 +41,8 @@ class App extends Component {
                 <Route exact path="/search" component={Results}/>
                 <Route exact path="/about" component={About}/>
                 <Route exact path="/tour/:id" component={TourDetail}/>   
-                <Route exact path="/tours" component={Tours} />
+                <Route exact path="/tours" component={Tours}/>
+                <Route exact path="/add" component={AddTour}/>
                 <Route exact path="/profile"/>
                 <Redirect to="/auth/signin"/>
               </Switch>

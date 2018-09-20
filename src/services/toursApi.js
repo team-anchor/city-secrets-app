@@ -30,6 +30,7 @@ export const addStopToTour = (tourId, stop) => {
   const url = `${TOURS_URL}/${tourId}/stops`;
   return put(url, stop)
     .then(res => {
+      console.log(res);
       stop.id = res.name;
       return stop;
     });

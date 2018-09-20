@@ -1,41 +1,33 @@
-import { TOURS_LOAD, TOUR_ADD } from '../tours/reducers';
+// import { TOURS_LOAD } from '../tours/reducers';
 
 export const STOP_ADD = 'STOP_ADD';
 export const STOP_REMOVE = 'STOP_REMOVE';
 export const STOP_UPDATE = 'STOP_UPDATE';
 
-export const getStops = state => state.stops;
-export const getStopsByTourId = (state, id) => getStops(state)[id];
+export const getStops = state => state;
+export const getStopsByTourId = (state, id) => {
+  console.log('*** GETSTOPS STATE ***', state);
+  return getStops(state)[id];
+};
 
-export function stops(state = [], { type, payload }) {
+export function stops(state = {}, { type, payload }) {
   switch(type) {
-    case TOURS_LOAD:
-      return payload.reduce((map, tour) => {
-        map[tour._id] = tour.stops;
-        return map;
-      }, {});
-    case TOUR_ADD:
-      return {
-        ...state,
-        [payload._id]: []
-      };
     case STOP_ADD:
+      console.log('*** STATE ***', state);
+      console.log('*** PAYLOAD ***', payload);
       return {
         ...state,
-        [payload.tourId]: [
-          ...state[payload.tourId],
-          payload
-        ]
+        ...payload
       };
     case STOP_REMOVE:
       return {
         ...state,
-        [payload.tourId]: state[payload.tourId].filter(stop => stop._id !== payload._id)
+        stops: state[stops].filter(stop => stop._id !== payload._id)
       };
     case STOP_UPDATE:
       return {
         ...state,
-        [payload.tourId]: state[payload.tourId].map(stop => stop._id === payload._id ? payload : stop)
+        stops: state[stops].map(stop => stop._id === payload._id ? payload : stop)
       };
     default:
       return state;

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { getTourList } from './reducers';
 import { loadTours } from './actions';
 import Tour from './Tour';
-import AddTour from './AddTour';
+// import AddTour from './AddTour';
 import styles from './Tours.css';
 
 class Tours extends Component {
@@ -22,7 +22,7 @@ class Tours extends Component {
     const { tours } = this.props;
     return (
       <div>
-        <AddTour/>
+        {/* <AddTour/> */}
         <ul className={styles.tours}>
           {tours.map((tour, i) => (
             <Tour key={i} tour={tour}/>

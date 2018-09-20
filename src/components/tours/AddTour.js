@@ -7,7 +7,9 @@ import { addTour } from './actions';
 class AddTour extends PureComponent {
   state = {
     name: '',
-    description: ''
+    description: '',
+    city: '',
+    tourImage: ''
   };
 
   static propTypes = {
@@ -22,11 +24,11 @@ class AddTour extends PureComponent {
     event.preventDefault();
     const { addTour } = this.props;
     addTour(this.state);
-    this.setState({ name: '', description: '' });
+    this.setState({ name: '', description: '', city: '', tourImage: '' });
   };
 
   render() {
-    const { name, description } = this.state;
+    const { name, description, city, tourImage } = this.state;
 
     return (
       <section>
@@ -38,6 +40,14 @@ class AddTour extends PureComponent {
 
           <FormControl label="description">
             <input name="description" value={description} onChange={this.handleChange}/>
+          </FormControl>
+
+          <FormControl label="city">
+            <input name="city" value={city} onChange={this.handleChange}/>
+          </FormControl>
+
+          <FormControl label="tourImage">
+            <input name="tourImage" value={tourImage} onChange={this.handleChange}/>
           </FormControl>
           <p>
             <button type="submit">Add</button>

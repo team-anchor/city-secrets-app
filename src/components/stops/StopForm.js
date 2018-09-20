@@ -1,6 +1,8 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import FormControl from '../shared/FormControl';
+import { addStop } from './actions';
 
 class StopForm extends PureComponent {
   state = {
@@ -11,7 +13,8 @@ class StopForm extends PureComponent {
 
   static propTypes = {
     stop: PropTypes.object,
-    onComplete: PropTypes.func.isRequired,
+    tourId: PropTypes.string.isRequired,
+    addStop: PropTypes.func.isRequired,
     onCancel: PropTypes.func
   };
 
@@ -26,8 +29,9 @@ class StopForm extends PureComponent {
   };
 
   handleSubmit = event => {
+    const { addStop, tourId } = this.props;
     event.preventDefault();
-    this.props.onComplete(this.state);
+    addStop(tourId, this.state);
     this.setState({ address: '', picture: '', caption: '' });
   };
 
@@ -60,4 +64,7 @@ class StopForm extends PureComponent {
   }
 }
  
-export default StopForm;
+export default connect(
+  null,
+  { addStop }
+)(StopForm);

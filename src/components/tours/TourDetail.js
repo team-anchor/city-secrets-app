@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { getTour } from '../../services/toursApi';
 import { addFavorite, removeFavorite } from '../../services/favoritesApi';
+import Stops from '../stops/Stops';
 import styles from './TourDetail.css';
 
 export default class TourDetail extends Component {
@@ -12,13 +13,11 @@ export default class TourDetail extends Component {
   };
 
   static propTypes = {
-    match: PropTypes.array
+    match: PropTypes.object
   };
 
   componentDidMount() {
-    // this.props.loadTour();
     const { id } = this.props.match.params;
-    console.log(this.props.match);
     getTour(id)
       .then(tour => {
         this.setState({ tour });
@@ -50,15 +49,18 @@ export default class TourDetail extends Component {
     const { favorite, tour } = this.state;
     if(!tour) return null;
 
-    const { name, description, location } = tour;
-    console.log(tour);
+    const { name, description, city } = tour;
 
     return (
       <div className={styles.tourDetail}>
         <img />
         <h2>{name}</h2>
-        <p><strong>Location:</strong>{location}</p>
-        <p><strong>description:</strong> {description}</p>
+        <p><strong>city: </strong>{city}</p>
+        <p><strong>description: </strong>{description}</p>
+        <Stops
+          stops={tour.stops}
+          tourId={tour._id}
+        />
         <button onClick={this.handleClick}>
           {favorite ? 'Remove from' : 'Add to' } Favorites
         </button>

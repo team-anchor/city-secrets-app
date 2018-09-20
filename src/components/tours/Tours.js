@@ -23,7 +23,6 @@ class Tours extends Component {
 
     return (
       <div>
-        {/* <AddTour/> */}
         <ul className={styles.tours}>
           {tours.map((tour, i) => (
             <Tour key={i} tour={tour}/>

@@ -31,14 +31,21 @@ export default class TourDetail extends Component {
     const { tour } = this.state;
     if(!tour) return null;
 
-    const { name, description, city } = tour;
+    const { name, description, stops } = tour;
 
     return (
       <div className={styles.tourDetail}>
-        <img />
-        <h2>{name}</h2>
-        <p><strong>city: </strong>{city}</p>
+        <h1>{name}</h1>
         <p><strong>description: </strong>{description}</p>
+        {stops.map((stop, i) => {
+          return (
+            <div key={i}>
+              <img className="covers" key={i} src={stop.picture}/>
+              <p key={i}>{stop.address}</p>
+            </div>
+          );
+        }
+        )}
         <Stops
           stops={tour.stops}
           tourId={tour._id}

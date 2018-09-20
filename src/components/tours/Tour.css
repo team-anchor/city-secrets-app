@@ -2,6 +2,7 @@
   border: 1px solid #333;
   max-width: 300px;
   min-height: 300px;
+  min-width: 300px;
   position: relative;
   -webkit-box-shadow: 0 8px 6px -6px #333;
 	-moz-box-shadow: 0 8px 6px -6px #333;
@@ -10,20 +11,34 @@
  }
 
 .textcontainer {
-  background-color: rgba(255, 255, 255, .75);
+  background-color: rgba(230, 230, 212, .8);
+  min-height: 110px;
+  text-align: left;
   width: 100%;
   position: absolute;
   z-index: 99;
   bottom: 0;
 }
 
-.tourtile h2 {
+h2.tourhead {
   color: #000;
-  font-weight: 700; 
-  margin-bottom: 0;
+  font-weight: 700;
+  text-align: left;
+  padding-right: 5px;
+  padding-left: 10px; 
+  margin-bottom: 0px;
   margin-top: 5px;
-  display: flex;
-  justify-content: center;
+}
+
+.tourtile >  a {
+  text-align: left;
+  font-size: 1.05em;
+  padding-right: 5px;
+  padding-left: 10px;
+  margin-top: 5px;
+  color: #000;
+  background: none;
+  
 }
 
 img.cover {
@@ -34,12 +49,12 @@ img.cover {
   top: 0;
 }
 
-.tourtile p {
+.tour-tile-text p {
   color: #000;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  display: flex;
-  justify-content: center;
+  font-size: 1.2em;
+  text-align: left;
+  padding-right: 5px;
+  padding-left: 10px;
 }
 
 .star {
@@ -50,6 +65,9 @@ img.cover {
   z-index: 99;
 }
 
+
+
+/* to-do: move this to app level CSS */
 html {
   background-color: #e6e6d4;
   background-image: url("../../assets/asfalt-dark.png");

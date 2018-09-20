@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import qs from 'query-string';
 import ToursResults from './ToursResults';
 import { search as searchTours } from '../../services/toursApi';
+import styles from './Results.css';
 
 class Results extends Component {
 
@@ -68,20 +69,23 @@ class Results extends Component {
             {error && <div>{error}</div>}
           </section>
         }
+        <div className={styles.results}>
 
-        {searchTerm && 
-          <Fragment>
-            <p>Searching for &quot;{searchTerm}&quot;</p>
-          </Fragment>
-        }
-
-        <div>
-          {tours 
-            ? <ToursResults tours={tours}/>
-            : <h1>Please enter a tour name to get started</h1>
+          {searchTerm && 
+            <Fragment>
+              <p>Searching for &quot;{searchTerm}&quot;</p>
+            </Fragment>
           }
+
+          <div className="results-container">
+            {tours 
+              ? <ToursResults tours={tours}/>
+              : <h1>Please enter a tour name to get started</h1>
+            }
+          </div>
         </div>
       </section>
+      
     );
   }
 }

@@ -17,7 +17,7 @@ class Tour extends Component {
 
     return ( 
       <div className={styles.Tour}>
-        <div className="tourtile">
+        <li className="tourtile">
           <img className="cover" src={tourimage}/>
           <Link to={`/tour/${_id}`}>
             <div className="star">
@@ -25,11 +25,10 @@ class Tour extends Component {
             </div>
             <div className="textcontainer">
               <h2 className="tourhead">{name}</h2>
-              <h2 className="tourhead">{city}</h2>
               <p className="tour-tile-text">{description}</p>
             </div>
           </Link>
-        </div>
+        </li>
       </div>
     );
   }

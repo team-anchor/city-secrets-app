@@ -1,3 +1,4 @@
+/* eslint no-case-declarations: off */
 import { LOGOUT } from '../auth/reducers';
 
 export const TOURS_LOAD = 'TOURS_LOAD';
@@ -8,10 +9,10 @@ export const LOAD_START = 'LOAD_START';
 export const LOAD_END = 'LOAD_END';
 export const ERROR = 'ERROR';
 
+
 export const getToursById = state => state.toursById;
 export const getTourList = state => state.tourList;
 export const getTourById = (state, id) => getToursById(state)[id];
-export const getTour = state => state.tour;
 
 export function toursById(state = [], { type, payload }) {
   switch(type) {
@@ -23,6 +24,15 @@ export function toursById(state = [], { type, payload }) {
         };
         return map;
       }, {});
+    case 'STOP_ADD':
+      const tourid = payload.tourid;
+      const tour = state[tourid];
+      const newStops = tour.stops.concat([payload]);
+      const newTour = { ...tour, stops: newStops };
+      return {
+        ...state,
+        [tourid]: newTour
+      };
     case TOUR_LOAD:
       return {
         ...state,

@@ -13,7 +13,7 @@ class StopForm extends PureComponent {
 
   static propTypes = {
     stop: PropTypes.object,
-    tourId: PropTypes.string.isRequired,
+    tourid: PropTypes.string,
     addStop: PropTypes.func.isRequired,
     onCancel: PropTypes.func
   };
@@ -21,7 +21,7 @@ class StopForm extends PureComponent {
   componentDidMount() {
     const { stop } = this.props;
     if(!stop) return;
-    this.setState(stop.location);
+    this.setState(stop);
   }
 
   handleChange = ({ target }) => {
@@ -29,9 +29,9 @@ class StopForm extends PureComponent {
   };
 
   handleSubmit = event => {
-    const { addStop, tourId } = this.props;
+    const { addStop, tourid } = this.props;
     event.preventDefault();
-    addStop(tourId, this.state);
+    addStop(tourid, this.state);
     this.setState({ address: '', picture: '', caption: '' });
   };
 

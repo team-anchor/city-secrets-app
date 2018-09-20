@@ -28,28 +28,8 @@ export default class TourDetail extends Component {
       .catch(console.log);
   }
   
-  handleClick = () => {
-    const { tour, favorite } = this.state;
-    const isFavorite = !!favorite;
-
-    if(isFavorite) {
-      removeFavorite(tour._id)
-        .then(() => {
-          this.setState({ favorite: null });
-        })
-        .catch(console.log);
-    }
-    else {
-      addFavorite(this.state.tour)
-        .then(favorite => {
-          this.setState({ favorite });
-        })
-        .catch(console.log);
-    }
-  };
-
   render() {
-    const { favorite, tour } = this.state;
+    const { tour } = this.state;
     if(!tour) return null;
 
     const { name, description, city } = tour;
@@ -71,8 +51,3 @@ export default class TourDetail extends Component {
     );
   }
 }
-
-// export default connect(
-//   state => ({ tour: getTourById(state, tour._id) }),
-//   { loadTour }
-// )(TourDetail);

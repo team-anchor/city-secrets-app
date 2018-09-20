@@ -59,6 +59,7 @@ class Results extends Component {
 
     const { tours, loading, error } = this.state;
     const { searchTerm } = this;
+    console.log('######', tours);
 
     return (
       <section className="mlist">

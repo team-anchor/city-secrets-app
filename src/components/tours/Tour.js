@@ -22,7 +22,7 @@ class Tour extends Component {
     //        />
     //      </li>
 
-    const { name, description, _id } = tour;
+    const { description, _id, tourImage, city } = tour;
 
     return ( 
       <div className={styles.Tour}>
@@ -33,6 +33,7 @@ class Tour extends Component {
             </div>
             <div className="textcontainer">
               <h2 className="tourhead">{name}</h2>
+              <h2 className="tourhead">{city}</h2>
               <p className="tour-tile-text">{description}</p>
             </div>
           </Link>

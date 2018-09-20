@@ -39,7 +39,7 @@ export function tourList(state = [], { type, payload }) {
   switch(type) {
     case TOURS_LOAD:
       return payload;
-    case TOUR_LOAD:
+    case TOUR_ADD:
       return [...state, payload];
     case TOUR_UPDATE:
       return state.map(tour => tour._id === payload._id ? payload : tour);

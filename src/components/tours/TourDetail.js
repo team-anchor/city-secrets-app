@@ -41,8 +41,8 @@ export default class TourDetail extends Component {
           return (
             <div key={i}>
               <img className="covers" key={i} src={stop.picture}/>
-              <p key={i}>{stop.address}</p>
-              <p key={i}>{stop.caption}</p>
+              <p key={i + 1}>{stop.address}</p>
+              <p key={i + 2}>{stop.caption}</p>
             </div>
           );
         }

@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 // import { getTourById } from '../../services/toursApi';
 import { getTour } from '../../services/toursApi';
 // import { loadTour } from './actions';
-import { addFavorite, removeFavorite } from '../../services/favoritesApi';
 import Stops from '../stops/Stops';
 import styles from './TourDetail.css';
 
@@ -44,9 +43,6 @@ export default class TourDetail extends Component {
           stops={tour.stops}
           tourId={tour._id}
         />
-        <button onClick={this.handleClick}>
-          {favorite ? 'Remove from' : 'Add to' } Favorites
-        </button>
       </div>
     );
   }

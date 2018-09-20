@@ -27,6 +27,7 @@ class Tour extends Component {
     return ( 
       <div className={styles.Tour}>
         <div className="tourtile">
+          <img className="cover" src={tourImage}/>
           <Link to={`/tour/${_id}`}>
             <div className="star">
               <i className="far fa-star fa-2x"></i>

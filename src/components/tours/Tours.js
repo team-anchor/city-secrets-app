@@ -3,12 +3,20 @@ import PropTypes from 'prop-types';
 import Tour from './Tour';
 // import AddTour from './AddTour';
 import styles from './Tours.css';
+import { connect } from 'react-redux';
+import { getTourList } from './reducers';
+import { loadTours } from './actions';
 
-export default class Tours extends Component {
+class Tours extends Component {
 
   static propTypes = {
+    loadTours: PropTypes.func.isRequired,
     tours: PropTypes.arrayOf(Object)
   };
+
+  componentDidMount() {
+    this.props.loadTours();
+  }
 
   render() {
     const { tours } = this.props;
@@ -25,3 +33,8 @@ export default class Tours extends Component {
     );
   }
 }
+
+export default connect(
+  state => ({ tours: getTourList(state) }),
+  { loadTours }
+)(Tours);

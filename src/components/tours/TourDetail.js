@@ -1,34 +1,32 @@
 /* eslint no-console: off */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-// import { connect } from 'react-redux';
-// import { getTourById } from '../../services/toursApi';
-import { getTour } from '../../services/toursApi';
-// import { loadTour } from './actions';
-import Stops from '../stops/Stops';
+import { connect } from 'react-redux';
+import { getTourById } from './reducers';
+// import { getTour } from '../../services/toursApi';
+import { loadTour } from './actions';
+import StopForm from '../stops/StopForm';
 import styles from './TourDetail.css';
 
-export default class TourDetail extends Component {
+class TourDetail extends Component {
   state = {
-    tour: null, 
     favorite: null
   };
 
   static propTypes = {
+    loadTour: PropTypes.func,
+    tour: PropTypes.object,
     match: PropTypes.object
   };
 
   componentDidMount() {
     const { id } = this.props.match.params;
-    getTour(id)
-      .then(tour => {
-        this.setState({ tour });
-      })
-      .catch(console.log);
+    this.props.loadTour(id);
   }
-  
+
   render() {
-    const { tour } = this.state;
+    const { tour } = this.props;
+    console.log('*** TOUR ***', tour);
     if(!tour) return null;
 
     const { name, description, stops } = tour;
@@ -47,11 +45,13 @@ export default class TourDetail extends Component {
           );
         }
         )}
-        <Stops
-          stops={tour.stops}
-          tourId={tour._id}
-        />
+        <StopForm tourid={tour._id}/>
       </div>
     );
   }
 }
+
+export default connect(
+  (state, props) => ({ tour: getTourById(state, props.match.params.id) }),
+  { loadTour }
+)(TourDetail);

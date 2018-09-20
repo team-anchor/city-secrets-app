@@ -23,7 +23,6 @@ class Tours extends Component {
 
     return (
       <div>
-        {/* <AddTour/> */}
         <div className={styles.tours}>
           <ul className="tours-container">
             {tours.map((tour, i) => (

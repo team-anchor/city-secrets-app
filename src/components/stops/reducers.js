@@ -11,11 +11,6 @@ export const getStopsByTourId = (state, id) => {
 
 export function stops(state = {}, { type, payload }) {
   switch(type) {
-    case STOP_ADD:
-      return {
-        ...state,
-        ...payload
-      };
     case STOP_REMOVE:
       return {
         ...state,

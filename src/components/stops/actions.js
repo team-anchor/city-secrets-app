@@ -6,7 +6,7 @@ export const addStop = (tourid, stop) => {
   stop.tourid = tourid;
   return {
     type: STOP_ADD,
-    payload: { tourid: addStopToTour(tourid, stop) }
+    payload: addStopToTour(tourid, stop)
   };
 };
 

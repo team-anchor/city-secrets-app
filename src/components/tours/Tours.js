@@ -1,25 +1,40 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { getTourList } from './reducers';
+import { loadTours } from './actions';
 import Tour from './Tour';
+import AddTour from './AddTour';
 import styles from './Tours.css';
 
-export default class Tours extends Component {
+class Tours extends Component {
 
   static propTypes = {
-    tours: PropTypes.arrayOf(Object)
+    loadTours: PropTypes.func.isRequired,
+    tours: PropTypes.array
   };
+
+  componentDidMount() {
+    this.props.loadTours();
+  }
 
   render() {
     const { tours } = this.props;
-
     return (
-      <ul className={styles.tours}>
+      <div>
+        <AddTour/>
+        <ul className={styles.tours}>
 
-        {/* <Tour /> */}
-        {tours.map((tour, i) => (
-          <Tour key={i} tour={tour}/>
-        ))}
-      </ul>
+          {tours.map((tour, i) => (
+            <Tour key={i} tour={tour}/>
+          ))}
+        </ul>
+      </div>
     );
   }
 }
+
+export default connect(
+  state => ({ tours: getTourList(state) }),
+  { loadTours }
+)(Tours);

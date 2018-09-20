@@ -30,24 +30,25 @@ class Tour extends Component {
   render() {
     const { tour } = this.props;
     const { name, description, id, stops } = tour;
-
     return (
       <li>
-        <Link to={`/tours/${id}`}>
-          {stops.map((stop, i) => {
-            return (
-              <p key={i}>{stop.location.picture}</p>
-            );
-          }
-          )}
-          <p><strong>{name}</strong> ({description})</p>
-          {stops.map((stop, i) => {
-            return (
-              <p key={i}>{stop.location.address}</p>
-            );
-          }
-          )}
-        </Link>
+        <div className={styles.Tour}>
+          <Link to={`/tours/${id}`}>
+            {stops.map((stop, i) => {
+              return (
+                <p key={i}>{stop.location.picture}</p>
+              );
+            }
+            )}
+            <p><strong>{name}</strong> ({description})</p>
+            {stops.map((stop, i) => {
+              return (
+                <p key={i}>{stop.location.address}</p>
+              );
+            }
+            )}
+          </Link>
+        </div>
       </li>
     );
   }

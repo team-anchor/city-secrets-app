@@ -1,4 +1,4 @@
-import { get, post, put } from './request';
+import { get, post, put, del } from './request';
 
 const URL = '/api';
 const AUTH_URL = `${URL}/auth`;
@@ -24,4 +24,19 @@ export const verifyUser = token => {
       Authorization: token
     }
   });
+};
+
+export const addStopToTour = (tourId, stop) => {
+  const url = `${TOURS_URL}/${tourId}/stops`;
+  return post(url, stop)
+    .then(res => {
+      console.log('*** RES ***', res);
+      stop.id = res.name;
+      return stop;
+    });
+};
+
+export const removeStopInTour = (tourId, stopId) => {
+  const url = `${TOURS_URL}/${tourId}/stops/${stopId}`;
+  return del(url);
 };

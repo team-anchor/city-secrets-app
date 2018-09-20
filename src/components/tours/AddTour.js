@@ -6,14 +6,12 @@ import { addTour } from './actions';
 
 class AddTour extends PureComponent {
   state = {
-    key: null,
     name: '',
     description: ''
   };
 
   static propTypes = {
     addTour: PropTypes.func.isRequired,
-    onCancel: PropTypes.func
   };
 
   handleChange = ({ target }) => {
@@ -24,12 +22,11 @@ class AddTour extends PureComponent {
     event.preventDefault();
     const { addTour } = this.props;
     addTour(this.state);
-    this.setState({ name: '', budget: '' });
+    this.setState({ name: '', description: '' });
   };
 
   render() {
-    const { key, name, description } = this.state;
-    const { onCancel } = this.props;
+    const { name, description } = this.state;
 
     return (
       <section>
@@ -43,8 +40,7 @@ class AddTour extends PureComponent {
             <input name="description" value={description} onChange={this.handleChange}/>
           </FormControl>
           <p>
-            <button type="submit">{ key ? 'Update' : 'Add' }</button>
-            {key && <button type="button" onClick={onCancel}>Cancel</button>}
+            <button type="submit">Add</button>
           </p>
         </form>
       </section>

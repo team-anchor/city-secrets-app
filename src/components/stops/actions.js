@@ -2,11 +2,11 @@ import { STOP_ADD, STOP_REMOVE } from './reducers';
 import { addStopToTour, removeStopInTour } from '../../services/toursApi';
 // import shortid from 'shortid';
 
-export const addStop = (tourId, stop) => {
-  stop.tourId = tourId;
+export const addStop = (tourid, stop) => {
+  stop.tourid = tourid;
   return {
     type: STOP_ADD,
-    payload: { tourId: addStopToTour(tourId, stop) }
+    payload: { tourid: addStopToTour(tourid, stop) }
   };
 };
 

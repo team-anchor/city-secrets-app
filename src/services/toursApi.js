@@ -10,7 +10,7 @@ export const signup = credentials => post(SIGNUP_URL, credentials);
 export const signin = credentials => post(SIGNIN_URL, credentials);
 
 export function search({ search }) {
-  return get(`${TOURS_URL}/name/${search}`);
+  return get(`${TOURS_URL}/city/${search}`);
 }
 
 export const getTours = () => get(TOURS_URL);

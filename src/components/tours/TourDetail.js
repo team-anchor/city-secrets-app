@@ -2,7 +2,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { getTour } from '../../services/toursApi';
-import { addFavorite, removeFavorite } from '../../services/favoritesApi';
 import styles from './TourDetail.css';
 
 export default class TourDetail extends Component {
@@ -16,7 +15,6 @@ export default class TourDetail extends Component {
   };
 
   componentDidMount() {
-    // this.props.loadTour();
     const { id } = this.props.match.params;
     console.log(this.props.match);
     getTour(id)
@@ -26,48 +24,27 @@ export default class TourDetail extends Component {
       .catch(console.log);
   }
   
-  handleClick = () => {
-    const { tour, favorite } = this.state;
-    const isFavorite = !!favorite;
-
-    if(isFavorite) {
-      removeFavorite(tour._id)
-        .then(() => {
-          this.setState({ favorite: null });
-        })
-        .catch(console.log);
-    }
-    else {
-      addFavorite(this.state.tour)
-        .then(favorite => {
-          this.setState({ favorite });
-        })
-        .catch(console.log);
-    }
-  };
-
   render() {
-    const { favorite, tour } = this.state;
+    const { tour } = this.state;
     if(!tour) return null;
 
-    const { name, description, location } = tour;
+    const { name, description, stops } = tour;
     console.log(tour);
 
     return (
       <div className={styles.tourDetail}>
-        <img />
-        <h2>{name}</h2>
-        <p><strong>Location:</strong>{location}</p>
-        <p><strong>description:</strong> {description}</p>
-        <button onClick={this.handleClick}>
-          {favorite ? 'Remove from' : 'Add to' } Favorites
-        </button>
+        <h1>{name}</h1>
+        <p><strong>Description: </strong>{description}</p>
+        {stops.map((stop, i) => {
+          return (
+            <div key={i}>
+              <img className="covers" key={i} src={stop.picture}/>
+              <p key={i}>{stop.address}</p>
+            </div>
+          );
+        }
+        )}
       </div>
     );
   }
 }
-
-// export default connect(
-//   state => ({ tour: getTourById(state, tour._id) }),
-//   { loadTour }
-// )(TourDetail);

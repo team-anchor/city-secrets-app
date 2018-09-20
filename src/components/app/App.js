@@ -26,7 +26,7 @@ class App extends Component {
     const { checkedAuth } = this.props;
     return (
       <Router>
-        <div>
+        <div className="wrapper">
           <header>
             <Header onSearch={this.handleSearch}/>
           </header>

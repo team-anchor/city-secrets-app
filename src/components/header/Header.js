@@ -4,7 +4,7 @@ import { NavLink, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getUser } from '../auth/reducers';
 import { logout } from '../auth/actions';
-import Search from '../search/Search';
+import HeaderLogo from '../../assets/header-logo.png';
 import styles from './Header.css';
 
 class Header extends Component {
@@ -20,7 +20,6 @@ class Header extends Component {
       <div className={styles.header}>
 
         <section className="header-container">
-          {user && <span>Logged in as {user.user.name}</span>}
           <nav className="topnav">
             <ul>
               <li>
@@ -47,9 +46,12 @@ class Header extends Component {
               </li>
             </ul>
           </nav>
-          <section className="search-container">
+          {user && <span className="logged-in-name">Logged in as {user.user.name}</span>}
+          {/* <section className="search-container">
             <Route component={Search}/>
-          </section>
+          </section> */}
+          <div className="logo-container"><img src={HeaderLogo} /></div>
+
         </section>
 
         

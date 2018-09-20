@@ -12,16 +12,6 @@ class Tour extends Component {
   render() { 
     const { tour } = this.props;
 
-    //  const { name, description } = tour;
-    //  return (
-    //    <div className={styles.Tour}>
-    //      <li>
-    //        <h3><strong>{name}</strong> ({description})</h3>
-    //        <Stops
-    //          tourId={tour._id}
-    //        />
-    //      </li>
-
     const { description, _id, tourImage, city } = tour;
 
     return ( 

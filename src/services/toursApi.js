@@ -26,8 +26,8 @@ export const verifyUser = token => {
   });
 };
 
-export const addStopToTour = (tourId, stop) => {
-  const url = `${TOURS_URL}/${tourId}/stops`;
+export const addStopToTour = (tourid, stop) => {
+  const url = `${TOURS_URL}/${tourid}/stops`;
   return put(url, stop)
     .then(res => {
       console.log(res);
@@ -36,7 +36,7 @@ export const addStopToTour = (tourId, stop) => {
     });
 };
 
-export const removeStopInTour = (tourId, stopId) => {
-  const url = `${TOURS_URL}/${tourId}/stops/${stopId}`;
+export const removeStopInTour = (tourid, stopid) => {
+  const url = `${TOURS_URL}/${tourid}/stops/${stopid}`;
   return del(url);
 };

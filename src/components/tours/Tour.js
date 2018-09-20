@@ -12,12 +12,12 @@ class Tour extends Component {
   render() { 
     const { tour } = this.props;
 
-    const { description, _id, tourImage, city } = tour;
+    const { description, _id, tourimage, city } = tour;
 
     return ( 
       <div className={styles.Tour}>
         <div className="tourtile">
-          <img className="cover" src={tourImage}/>
+          <img className="cover" src={tourimage}/>
           <Link to={`/tour/${_id}`}>
             <div className="star">
               <i className="far fa-star fa-2x"></i>

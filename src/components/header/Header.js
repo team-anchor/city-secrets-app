@@ -22,9 +22,11 @@ class Header extends Component {
         <section className="header-container">
           <nav className="topnav">
             <ul>
+              {user &&
               <li>
-                <NavLink to="/">Home</NavLink>
+                <NavLink to="/home">Home</NavLink>
               </li>
+              }
               <li>
                 <NavLink to="/about">About</NavLink>
               </li>

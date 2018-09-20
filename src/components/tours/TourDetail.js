@@ -30,13 +30,13 @@ export default class Tour extends Component {
       })
       .catch(console.log);
   }
-
+  
   handleClick = () => {
     const { tour, favorite } = this.state;
     const isFavorite = !!favorite;
 
     if(isFavorite) {
-      removeFavorite(tour.id)
+      removeFavorite(tour._id)
         .then(() => {
           this.setState({ favorite: null });
         })

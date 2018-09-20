@@ -4,52 +4,41 @@ import { Link } from 'react-router-dom';
 import styles from '../tours/Tour.css';
 
 class Tour extends Component {
-  
-  // render() { 
-  //   return ( 
-  //     <div className={styles.Tour}>
-  //       < a href="#"> 
-  //         <div className="tourtile">
-  //           <div className="star">
-  //             <i className="far fa-star fa-2x"></i>
-  //           </div>
-  //           <img className="cover" src="http://www.worldwidewalrusweb.com/bc2/europe_2.jpg" />
-  //           <div className="textcontainer">
-  //             <h2 className="tourhead">Secret Walking Tour</h2>
-  //             <p className="tour-tile-text">Here is the description of this tour. It is super cool, you should really check it out</p>
-  //           </div>
-            
-  //         </div>
-  //       </a>
-  //     </div> 
 
   static propTypes = {
     tour: PropTypes.object.isRequired
   };
-
-  render() {
+  
+  render() { 
     const { tour } = this.props;
-    const { name, description, id, stops } = tour;
-    return (
-      <li>
-        <div className={styles.Tour}>
-          <Link to={`/tours/${id}`}>
-            {stops.map((stop, i) => {
-              return (
-                <p key={i}>{stop.location.picture}</p>
-              );
-            }
-            )}
-            <p><strong>{name}</strong> ({description})</p>
-            {stops.map((stop, i) => {
-              return (
-                <p key={i}>{stop.location.address}</p>
-              );
-            }
-            )}
+    const { name, description, _id, stops } = tour;
+
+    return ( 
+      <div className={styles.Tour}>
+        <div className="tourtile">
+          <Link to={`/tours/${_id}`}>
+            <div className="star">
+              <i className="far fa-star fa-2x"></i>
+              {stops.map((stop, i) => {
+                return (
+                  <img className="cover" key={i} src={stop.location.picture}/>
+                );
+              }
+              )}
+            </div>
+            <div className="textcontainer">
+              <h2 className="tourhead">{name}</h2>
+              <p className="tour-tile-text">{description}</p>
+              {stops.map((stop, i) => {
+                return (
+                  <p key={i}>{stop.location.address}</p>
+                );
+              }
+              )}
+            </div>
           </Link>
         </div>
-      </li>
+      </div>
     );
   }
 }

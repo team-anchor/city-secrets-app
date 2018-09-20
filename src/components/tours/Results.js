@@ -1,8 +1,10 @@
 import React, { Component, Fragment } from 'react';
+import { Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import qs from 'query-string';
 import ToursResults from './ToursResults';
 import { search as searchTours } from '../../services/toursApi';
+import Search from '../search/Search';
 import styles from './Results.css';
 
 class Results extends Component {
@@ -73,10 +75,14 @@ class Results extends Component {
           <div className="search-term">
             {searchTerm && 
             <Fragment>
-              <h3>We found these <strong>CitySecrets</strong> in &quot;{searchTerm}&quot;</h3>
+              <h3>We found these <strong>CitySecrets</strong> in &ldquo;{searchTerm}&rdquo;</h3>
             </Fragment>
             }
           </div>
+
+  <section className="search-container">
+            <Route component={Search}/>
+          </section>
 
           <div className="results-container">
             {tours 

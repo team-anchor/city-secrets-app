@@ -3,21 +3,19 @@ import { post, get, del } from './request';
 const URL = '/api';
 const FAVORITES_URL = `${URL}/favorites`;
 
-const getFavoriteUrl = FAVORITES_URL;
+const getFavoriteUrl = id => `${FAVORITES_URL}/${id}`;
 
-export const addFavorite = ({ id, name, featured_image, location, description }) => {
-  const url = getFavoriteUrl(id);
+export const addFavorite = ({ _id, name, description }) => {
+  const url = getFavoriteUrl(_id);
   return post(url, {
-    id,
+    _id,
     name,
-    featured_image,
-    location,
     description
   });
 };
 
 export const getFavorites = () => {
-  return get(`${FAVORITES_URL}.json`)
+  return get(`${FAVORITES_URL}`)
     .then(res => {
       return Object.keys(res)
         .map(key => res[key]);

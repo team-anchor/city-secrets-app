@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { signin, signup } from './actions';
 import { getUser } from './reducers';
 import Credentials from './Credentials';
+import Logo from '../../assets/Logo.png';
 import styles from './Auth.css';
 
 class Auth extends PureComponent {
@@ -19,25 +20,35 @@ class Auth extends PureComponent {
     const { user, signin, signup, location } = this.props;
     const redirect = location.state ? location.state.from : '/';
     if(user) return <Redirect to={redirect}/>;
+    
 
     return (
       <div className={styles.auth}>
-        <h2>Auth Component</h2>
-        <Switch>
-          <Route path="/auth/signin" component={() => (
-            <section>
-              <p>Not a user? <Link to="/auth/signup">Sign Up</Link></p>
-              <Credentials action="Sign In" submit={signin}/>
-            </section>
-          )}/>
-          <Route path="/auth/signup" render={() => (
-            <section>
-              <p>Already have an account? <Link to="/auth/signin">Sign In</Link></p>
-              <Credentials action="Sign Up" submit={signup} allowName={true}/>
-            </section>
-          )}/>
-          <Redirect to="/auth/signin"/>
-        </Switch>
+        <div className="splash-page">
+          <div className="headline-container">
+            <img src={Logo} />
+            <h1>CitySecrets</h1>
+            <h2>Discover what surrounds you!<br />Curated walks to discover secrets in cities around the world.</h2>
+          </div>
+        </div>
+        
+        <div className="auth">
+          <Switch>
+            <Route path="/auth/signin" component={() => (
+              <section className="contents">
+                <Credentials action="Sign In" submit={signin}/>
+                <p>Not a user? <Link to="/auth/signup">Sign Up</Link></p>
+              </section>
+            )}/>
+            <Route path="/auth/signup" render={() => (
+              <section className="contents">
+                <Credentials action="Sign Up" submit={signup} allowName={true}/>
+                <p>Already have an account? <Link to="/auth/signin">Sign In</Link></p>
+              </section>
+            )}/>
+            <Redirect to="/auth/signin"/>
+          </Switch>
+        </div>
       </div>
     );
   }

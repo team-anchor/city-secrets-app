@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import qs from 'query-string';
-import Tours from './Tours';
+import ToursResults from './ToursResults';
 import { search as searchTours } from '../../services/toursApi';
 
 class Results extends Component {
@@ -59,7 +59,6 @@ class Results extends Component {
 
     const { tours, loading, error } = this.state;
     const { searchTerm } = this;
-    console.log('######', tours);
 
     return (
       <section className="mlist">
@@ -78,7 +77,7 @@ class Results extends Component {
 
         <div>
           {tours 
-            ? <Tours tours={tours}/>
+            ? <ToursResults tours={tours}/>
             : <h1>Please enter a tour name to get started</h1>
           }
         </div>

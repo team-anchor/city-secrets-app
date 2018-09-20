@@ -11,14 +11,14 @@ export default class Tour extends Component {
 
   render() {
     const { tour } = this.props;
-    const { id, name, featured_image } = tour;
+    const { _id, name, description } = tour;
 
     return (
       <div>
         <li className={styles.favorite}>
-          <Link to={`/tours/${id}`}>
-            <img src={featured_image}/>
+          <Link to={`/tours/${_id}`}>
             <p><strong>{name}</strong></p>
+            <p><strong>{description}</strong></p>
           </Link>
         </li>
       </div>

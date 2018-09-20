@@ -27,6 +27,20 @@ body {
   display: inline-block;
 }
 
+.logged-in-name {
+  padding-top: 22px;
+}
+
+.logo-container {
+  position: absolute;
+  left: 10px;
+  padding-top: 8px;
+}
+
+.logo-container img {
+  height: 50px;
+}
+
 .topnav a {
   color: #fff;
   text-decoration: none;

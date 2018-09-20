@@ -10,6 +10,8 @@ import Auth from '../auth/Auth';
 import Results from '../tours/Results';
 import TourDetail from '../tours/TourDetail';
 import Tours from '../tours/Tours';
+import Favorites from '../favorites/Favorites';
+
 
 class App extends Component {
   static propTypes = {
@@ -35,9 +37,10 @@ class App extends Component {
               <Switch>
                 <Route exact path="/" component={Home}/>
                 <Route path="/auth" component={Auth}/>
+                <Route exact path="/favorites" component={Favorites}/>
                 <Route exact path="/search" component={Results}/>
                 <Route exact path="/about"/>
-                <Route exact path="/tour/:id" component={TourDetail}/>   
+                <Route exact path="/tours/:id" component={TourDetail}/>   
                 <Route exact path="/tours" component={Tours} />
                 <Route exact path="/profile"/>
 

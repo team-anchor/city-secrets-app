@@ -29,7 +29,7 @@ export function search({ search }) {
 
 export function getTours(id) {
   if(id) {
-    return getUrl(`${TOURS_URL}/id/${id}`);
+    return getUrl(`${TOURS_URL}/${id}`);
   }
   else {
     return getUrl(TOURS_URL);

@@ -25,7 +25,7 @@ class Favorites extends Component {
       <div>
         <ul className={styles.favorites}>
           {favorites.map(favorite => {
-            return <Favorite key={favorite.id} movie={favorite}/>;
+            return <Favorite key={favorite._id} tour={favorite}/>;
           })}
         </ul>
       </div>

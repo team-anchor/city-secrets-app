@@ -1,71 +1,49 @@
 /* eslint no-console: off */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { getTours } from '../../services/toursApi';
-import { addFavorite, getFavorite, removeFavorite } from '../../services/favoritesApi';
+import { getTour } from '../../services/toursApi';
 import styles from './TourDetail.css';
 
-export default class Tour extends Component {
-
+export default class TourDetail extends Component {
   state = {
     tour: null, 
     favorite: null
   };
 
   static propTypes = {
-    match: PropTypes.object.isRequired
+    match: PropTypes.array
   };
 
   componentDidMount() {
     const { id } = this.props.match.params;
-    getTours(id)
+    console.log(this.props.match);
+    getTour(id)
       .then(tour => {
         this.setState({ tour });
       })
       .catch(console.log);
-
-    getFavorite(id)
-      .then(favorite => {
-        this.setState({ favorite });
-      })
-      .catch(console.log);
   }
   
-  handleClick = () => {
-    const { tour, favorite } = this.state;
-    const isFavorite = !!favorite;
-
-    if(isFavorite) {
-      removeFavorite(tour._id)
-        .then(() => {
-          this.setState({ favorite: null });
-        })
-        .catch(console.log);
-    }
-    else {
-      addFavorite(this.state.tour)
-        .then(favorite => {
-          this.setState({ favorite });
-        })
-        .catch(console.log);
-    }
-  };
-
   render() {
-    const { tour, favorite } = this.state;
+    const { tour } = this.state;
     if(!tour) return null;
 
-    const { name, description, location } = tour;
+    const { name, description, stops } = tour;
+    console.log(tour);
 
     return (
       <div className={styles.tourDetail}>
-        <img />
-        <h2>{name}</h2>
-        <p><strong>Location:</strong>{location}</p>
-        <p><strong>description:</strong> {description}</p>
-        <button onClick={this.handleClick}>
-          {favorite ? 'Remove from' : 'Add to' } Favorites
-        </button>
+        <h1>{name}</h1>
+        <p><strong>Description: </strong>{description}</p>
+        {stops.map((stop, i) => {
+          return (
+            <div key={i}>
+              <img className="covers" key={i} src={stop.picture}/>
+              <p key={i}>{stop.address}</p>
+            </div>
+          );
+        }
+        )}
       </div>
     );
   }

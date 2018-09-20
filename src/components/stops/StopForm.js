@@ -38,7 +38,7 @@ class StopForm extends PureComponent {
     return (
       <section>
         <h2>Add a stop</h2>
-        <form onSubmit={this.handleAdd}>
+        <form onSubmit={this.handleSubmit}>
           <FormControl label="address">
             <input name="address" value={address} onChange={this.handleChange}/>
           </FormControl>

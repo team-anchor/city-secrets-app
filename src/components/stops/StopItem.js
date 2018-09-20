@@ -15,9 +15,9 @@ class StopItem extends Component {
 
     return (
       <section>
-        <p>{stop.location.address}</p>
-        <p>{stop.location.picture}</p>
-        <p>{stop.location.caption}</p>
+        <p>{stop.address}</p>
+        <p>{stop.picture}</p>
+        <p>{stop.caption}</p>
         <button name="edit" onClick={onEdit}>Edit</button>
         <button name="delete" onClick={() => remove(stop)}>Delete</button>
       </section>

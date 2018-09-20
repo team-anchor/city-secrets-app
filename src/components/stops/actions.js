@@ -3,7 +3,6 @@ import { addStopToTour, removeStopInTour } from '../../services/toursApi';
 // import shortid from 'shortid';
 
 export const add = (tourId, stop) => {
-  // stop.id = shortid.generate();
   stop.tourId = tourId;
   return {
     type: STOP_ADD,

@@ -28,9 +28,8 @@ export const verifyUser = token => {
 
 export const addStopToTour = (tourId, stop) => {
   const url = `${TOURS_URL}/${tourId}/stops`;
-  return post(url, stop)
+  return put(url, stop)
     .then(res => {
-      console.log('*** RES ***', res);
       stop.id = res.name;
       return stop;
     });

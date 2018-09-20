@@ -1,31 +1,21 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { getStopsByTourId } from './reducers';
-import { add } from './actions';
 import Stop from './Stop';
 import StopForm from './StopForm';
 
 class Stops extends Component {
   static propTypes = {
     stops: PropTypes.array,
-    tourId: PropTypes.string.isRequired,
-    add: PropTypes.func.isRequired
-  };
-
-  handleAdd = stop => {
-    const { tourId, add } = this.props;
-    add(tourId, { ...stop });
+    tourId: PropTypes.string.isRequired
   };
 
   render() {
-    const { stops } = this.props;
+    const { stops, tourId } = this.props;
 
     return (
       <section>
         <section>
-          <h3>Add a stop</h3>
-          <StopForm onComplete={this.handleAdd}/>
+          <StopForm onComplete={this.handleAdd} tourId={tourId}/>
         </section>
 
         {stops &&
@@ -42,10 +32,5 @@ class Stops extends Component {
     );
   }
 }
- 
-export default connect(
-  (state, { tourId }) => ({
-    stops: getStopsByTourId(state, tourId)
-  }),
-  { add }
-)(Stops);
+
+export default Stops;

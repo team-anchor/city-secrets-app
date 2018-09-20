@@ -6,6 +6,7 @@ import { tryLoadUser } from '../auth/actions';
 import { getCheckedAuth } from '../auth/reducers';
 import Header from '../header/Header';
 import Home from '../home/Home';
+import About from '../about/About';
 import Auth from '../auth/Auth';
 import Results from '../tours/Results';
 import TourDetail from '../tours/TourDetail';
@@ -36,7 +37,7 @@ class App extends Component {
                 <Route exact path="/home" component={Home}/>
                 <Route path="/auth" component={Auth}/>
                 <Route exact path="/search" component={Results}/>
-                <Route exact path="/about" />
+                <Route exact path="/about" component={About}/>
                 <Route exact path="/tour/:id" component={TourDetail}/>   
                 <Route exact path="/tours" component={Tours} />
                 <Route exact path="/profile"/>

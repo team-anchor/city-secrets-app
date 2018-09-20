@@ -1,4 +1,23 @@
-.headline-container {
-  flex: 1;
+.about-headline {
+  display: flex;
+  flex-direction: column;
+  background-image: 'none';
+  color: white;
   align-items: center;
+
+}
+
+i {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.about-headline h1 {
+  text-align: center;
+  font-size: 4em;
+  font-weight: 700;
+  text-shadow: 3px 3px 3px black; 
+  color: white;
+  margin: 0;
+  
 }

@@ -70,12 +70,13 @@ class Results extends Component {
           </section>
         }
         <div className={styles.results}>
-
-          {searchTerm && 
+          <div className="search-term">
+            {searchTerm && 
             <Fragment>
-              <p>Searching for &quot;{searchTerm}&quot;</p>
+              <h3>We found these <strong>CitySecrets</strong> in &quot;{searchTerm}&quot;</h3>
             </Fragment>
-          }
+            }
+          </div>
 
           <div className="results-container">
             {tours 

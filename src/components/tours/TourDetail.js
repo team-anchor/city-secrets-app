@@ -1,32 +1,27 @@
 /* eslint no-console: off */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { getTours } from '../../services/toursApi';
-import { addFavorite, getFavorite, removeFavorite } from '../../services/favoritesApi';
+import { getTour } from '../../services/toursApi';
+import { addFavorite, removeFavorite } from '../../services/favoritesApi';
 import styles from './TourDetail.css';
 
-export default class Tour extends Component {
-
+export default class TourDetail extends Component {
   state = {
     tour: null, 
     favorite: null
   };
 
   static propTypes = {
-    match: PropTypes.object.isRequired
+    match: PropTypes.array
   };
 
   componentDidMount() {
+    // this.props.loadTour();
     const { id } = this.props.match.params;
-    getTours(id)
+    console.log(this.props.match);
+    getTour(id)
       .then(tour => {
         this.setState({ tour });
-      })
-      .catch(console.log);
-
-    getFavorite(id)
-      .then(favorite => {
-        this.setState({ favorite });
       })
       .catch(console.log);
   }
@@ -52,10 +47,11 @@ export default class Tour extends Component {
   };
 
   render() {
-    const { tour, favorite } = this.state;
+    const { favorite, tour } = this.state;
     if(!tour) return null;
 
     const { name, description, location } = tour;
+    console.log(tour);
 
     return (
       <div className={styles.tourDetail}>
@@ -70,3 +66,8 @@ export default class Tour extends Component {
     );
   }
 }
+
+// export default connect(
+//   state => ({ tour: getTourById(state, tour._id) }),
+//   { loadTour }
+// )(TourDetail);

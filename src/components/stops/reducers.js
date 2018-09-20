@@ -6,15 +6,12 @@ export const STOP_UPDATE = 'STOP_UPDATE';
 
 export const getStops = state => state;
 export const getStopsByTourId = (state, id) => {
-  console.log('*** GETSTOPS STATE ***', state);
   return getStops(state)[id];
 };
 
 export function stops(state = {}, { type, payload }) {
   switch(type) {
     case STOP_ADD:
-      console.log('*** STATE ***', state);
-      console.log('*** PAYLOAD ***', payload);
       return {
         ...state,
         ...payload

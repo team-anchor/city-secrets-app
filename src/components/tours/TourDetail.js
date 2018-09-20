@@ -1,7 +1,10 @@
 /* eslint no-console: off */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+// import { connect } from 'react-redux';
+// import { getTourById } from '../../services/toursApi';
 import { getTour } from '../../services/toursApi';
+// import { loadTour } from './actions';
 import { addFavorite, removeFavorite } from '../../services/favoritesApi';
 import Stops from '../stops/Stops';
 import styles from './TourDetail.css';

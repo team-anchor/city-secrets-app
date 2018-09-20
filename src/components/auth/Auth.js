@@ -29,25 +29,26 @@ class Auth extends PureComponent {
             <img src={Logo} />
             <h1>CitySecrets</h1>
             <h2>Discover what surrounds you!<br />Curated walks to discover secrets in cities around the world.</h2>
+         
+            <div className="auth">
+              <Switch>
+                <Route path="/auth/signin" component={() => (
+                  <section className="contents">
+                    <Credentials action="Sign In" submit={signin}/>
+                    <p>Not a user?&nbsp;&nbsp;<Link to="/auth/signup"> Sign Up</Link></p>
+                  </section>
+                )}/>
+                <Route path="/auth/signup" render={() => (
+                  <section className="contents">
+                    <Credentials action="Sign Up" submit={signup} allowName={true}/>
+                    <p>Already have an account?&nbsp;&nbsp;<Link to="/auth/signin"> Sign In</Link></p>
+                  </section>
+                )}/>
+                <Redirect to="/auth/signin"/>
+              </Switch>
+
+            </div>
           </div>
-        </div>
-        
-        <div className="auth">
-          <Switch>
-            <Route path="/auth/signin" component={() => (
-              <section className="contents">
-                <Credentials action="Sign In" submit={signin}/>
-                <p>Not a user? <Link to="/auth/signup">Sign Up</Link></p>
-              </section>
-            )}/>
-            <Route path="/auth/signup" render={() => (
-              <section className="contents">
-                <Credentials action="Sign Up" submit={signup} allowName={true}/>
-                <p>Already have an account? <Link to="/auth/signin">Sign In</Link></p>
-              </section>
-            )}/>
-            <Redirect to="/auth/signin"/>
-          </Switch>
         </div>
       </div>
     );

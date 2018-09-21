@@ -4,17 +4,8 @@
   flex-direction: column;
 }
 
-.add-stop-form-container h1 {
-    text-align: center;
-    font-size: 4em;
-    font-weight: 900;
-    text-shadow: 3px 3px 3px #CCC; 
-    color: #333;
-    margin-bottom: 10px;
-    margin-top: 20px;
-}
-
 .add-stop-form {
+  text-align: center;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -26,7 +17,6 @@
 }
 
 .add-stop-form input {
-  
   border: 1px solid white;
   border-radius: 12px;
   background: rgba(255, 255, 255, .2);
@@ -69,7 +59,7 @@
 	border-radius:12px;
 	border:1px solid #005874;
   display: flex;
-  flex: 1;
+  align-items: center;
 	cursor:pointer;
 	color:#ffffff;
 	font-family: "Encode Sans Condensed";
@@ -88,6 +78,7 @@
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#1c829e', endColorstr='#21d3ff',GradientType=0);
 	background-color:#1c829e;
 }
+
 .add-stop-form button:active {
 	position:relative;
 	top:1px;
@@ -102,7 +93,16 @@
   margin: 20px;
 }
 
-p{
+.p {
   color: white;
+  padding: 10px;
 }
 
+.Dropzone{
+ border: dotted white 2px;
+}
+
+.Dropzone:hover{
+  border: dotted white 2px;
+  cursor: pointer;
+ }

@@ -43,6 +43,8 @@ body {
   left: 55px;
   padding-top: 12px;
   font-weight: 700;
+  text-decoration: none;
+  color: white;
 }
 
 .logo-container img {

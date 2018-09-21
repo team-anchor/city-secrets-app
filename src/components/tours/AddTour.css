@@ -1,0 +1,94 @@
+.add-tour-form-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.add-tour-form-container h1 {
+    text-align: center;
+    font-size: 4em;
+    font-weight: 900;
+    text-shadow: 3px 3px 3px #CCC; 
+    color: #333;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.add-tour-form {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex: 1;
+  background-color: #005874;
+  width: 55%;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.add-tour-form input {
+  
+  border: 1px solid white;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, .2);
+  font-size: 1.3em;
+  width: 400px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.add-tour-form label {
+  color: #fff;
+  font-size: inherit;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-right: 10px;
+}
+
+.add-tour-form button {
+	-moz-box-shadow:inset 0px 1px 0px 0px #b0fcff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #b0fcff;
+	box-shadow:inset 0px 1px 0px 0px #b0fcff;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #21d3ff), color-stop(1, #1c829e));
+	background:-moz-linear-gradient(top, #21d3ff 5%, #1c829e 100%);
+	background:-webkit-linear-gradient(top, #21d3ff 5%, #1c829e 100%);
+	background:-o-linear-gradient(top, #21d3ff 5%, #1c829e 100%);
+	background:-ms-linear-gradient(top, #21d3ff 5%, #1c829e 100%);
+	background:linear-gradient(to bottom, #21d3ff 5%, #1c829e 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#21d3ff', endColorstr='#1c829e',GradientType=0);
+  margin-top: 10px;
+	background-color:#21d3ff;
+	-moz-border-radius:12px;
+	-webkit-border-radius:12px;
+	border-radius:12px;
+	border:1px solid #005874;
+  display: flex;
+  flex: 1;
+	cursor:pointer;
+	color:#ffffff;
+	font-family: "Encode Sans Condensed";
+	font-size: 17px;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #000000;
+}
+.add-tour-form button:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #1c829e), color-stop(1, #21d3ff));
+	background:-moz-linear-gradient(top, #1c829e 5%, #21d3ff 100%);
+	background:-webkit-linear-gradient(top, #1c829e 5%, #21d3ff 100%);
+	background:-o-linear-gradient(top, #1c829e 5%, #21d3ff 100%);
+	background:-ms-linear-gradient(top, #1c829e 5%, #21d3ff 100%);
+	background:linear-gradient(to bottom, #1c829e 5%, #21d3ff 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#1c829e', endColorstr='#21d3ff',GradientType=0);
+	background-color:#1c829e;
+}
+.add-tour-form button:active {
+	position:relative;
+	top:1px;
+}

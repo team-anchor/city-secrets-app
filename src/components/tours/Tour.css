@@ -1,8 +1,8 @@
 .tourtile {
   border: 1px solid #333;
-  max-width: 300px;
-  min-height: 300px;
-  min-width: 300px;
+  max-width: 400px;
+  min-height: 320px;
+  min-width: 400px;
   position: relative;
   -webkit-box-shadow: 0 8px 6px -6px #333;
 	-moz-box-shadow: 0 8px 6px -6px #333;
@@ -21,7 +21,7 @@
 }
 
 h2.tourhead {
-  color: #000;
+  color: rgb(0, 0, 0);
   font-weight: 700;
   text-align: left;
   padding-right: 5px;
@@ -31,6 +31,17 @@ h2.tourhead {
 }
 
 .tourtile >  a {
+  text-align: left;
+  font-size: 1.05em;
+  padding-right: 5px;
+  padding-left: 10px;
+  margin-top: 5px;
+  color: #000;
+  background: none;
+  
+}
+
+p.tour-tile-text {
   text-align: left;
   font-size: 1.05em;
   padding-right: 5px;
@@ -61,7 +72,7 @@ img.cover {
   color: #ffbe00; 
   position: absolute;
   top: 10px;
-  left: 255px;
+  left: 355px;
   z-index: 99;
 }
 

@@ -10,3 +10,30 @@ ul.tours-container {
   list-style: none;
   
 }
+
+.onpage-search-container {
+  text-align: center;
+}
+
+.onpage-search-container p {
+  font-size: 1.6em;
+}
+
+.all-tours-view h1 {
+  text-align: center;
+  font-size: 4em;
+  font-weight: 900;
+  text-shadow: 3px 3px 3px #CCC; 
+  color: #333;
+  margin: 0;
+  margin-top: 20px;
+  
+}
+
+.all-tours-view h2 {
+  text-align: center;
+  font-size: 1.8em;
+  color: #333;
+  margin-top: 10px;
+  
+}

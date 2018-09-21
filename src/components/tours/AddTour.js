@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import FormControl from '../shared/FormControl';
 import { addTour } from './actions';
+import styles from './AddTour.css';
 
 class AddTour extends PureComponent {
   state = {
@@ -31,22 +32,22 @@ class AddTour extends PureComponent {
     const { name, description, city, tourimage } = this.state;
 
     return (
-      <section>
+      <section className={styles.AddTour}>
         <h2>Share a tour</h2>
         <form onSubmit={this.handleAdd}>
-          <FormControl label="name">
+          <FormControl label="Name">
             <input name="name" value={name} onChange={this.handleChange}/>
           </FormControl>
 
-          <FormControl label="description">
+          <FormControl label="Description">
             <input name="description" value={description} onChange={this.handleChange}/>
           </FormControl>
 
-          <FormControl label="city">
+          <FormControl label="City">
             <input name="city" value={city} onChange={this.handleChange}/>
           </FormControl>
 
-          <FormControl label="Featured image">
+          <FormControl label="Featured Image">
             <input name="tourimage" value={tourimage} onChange={this.handleChange}/>
           </FormControl>
           <p>

@@ -1,11 +1,9 @@
 ul.tours-container li {
-  display: inline-block;
   list-style: none;
-
 }
 
 ul.tours-container {
-  display: flex;
-  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   
 }

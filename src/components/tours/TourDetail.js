@@ -34,7 +34,7 @@ class TourDetail extends Component {
     return (
       <div className={styles.tourDetail}>
         <h1>{name}</h1>
-        <p><strong>description: </strong>{description}</p>
+        <h2>{description}</h2>
         {stops.map((stop, i) => {
           return (
             <div key={i}>

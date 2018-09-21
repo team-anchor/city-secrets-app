@@ -1,9 +1,10 @@
 .results-container {
   display: flex;
   flex-direction: row;
-
-   ul {
-     display: flex;
+  
+  ul {
+    display: flex;
+    flex-wrap: wrap;
     list-style: none;
   }
 }
@@ -14,6 +15,7 @@
 
 h3 {
   margin-top: 60px;
+  margin-bottom: 0px;
   font-weight: 700;
   font-size: 2.6em;
   font-style: italic;
@@ -22,4 +24,12 @@ h3 {
 .search-term strong {
   font-weight: 700;
   color: #005874;
+}
+
+.onpage-search-container {
+  text-align: center;
+}
+
+.onpage-search-container p {
+  font-size: 1.6em;
 }

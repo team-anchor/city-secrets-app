@@ -26,7 +26,6 @@ class TourDetail extends Component {
 
   render() {
     const { tour } = this.props;
-    console.log('*** TOUR ***', tour);
     if(!tour) return null;
 
     const { name, description, stops } = tour;
@@ -39,7 +38,7 @@ class TourDetail extends Component {
           return (
             <div key={i}>
               <img className="covers" key={i} src={stop.picture}/>
-              <p key={i + 1}>{stop.address}</p>
+              <p key={i + 1}>{stop.address}  <span className="map-pin"><i className="fas fa-map-marker-alt">&nbsp;</i></span><a href="https://goo.gl/maps/AmKdG4j5YWF2" taget="_blank">View on Google Maps</a></p>
               <p key={i + 2}>{stop.caption}</p>
             </div>
           );

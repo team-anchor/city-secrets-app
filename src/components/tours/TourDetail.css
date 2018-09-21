@@ -34,4 +34,9 @@ img.covers{
     margin: 5px;
     text-align: center;
   }
+
+  .map-pin {
+    margin-left: 5px;
+    color:#1c819e;
+  }
 }

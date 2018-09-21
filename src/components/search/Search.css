@@ -9,8 +9,12 @@ form {
   margin-top: 5%;
 }
 
+label {
+  font-size: 1.2em;
+}
+
 .search-form input {
-  border: 1px solid white;
+  border: 2px solid #005874;
   font-size: inherit;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -21,10 +25,10 @@ form {
 }
 
 form.search-form button {
-  border: 1px solid white;
-  font-size: inherit;
+  border: 2px solid #005874;
+  font-size: 1.2em;
   background: none;
-  color: #fff;
+  color: #005874;
   padding-top: 5px;
   padding-bottom: 5px;
   padding-right: 10px;
@@ -33,6 +37,8 @@ form.search-form button {
 }
 form.search-form button:hover {
   color: #ffbe00; 
+  border: 2px solid #1c819e;
+  background-color:  #005874;
 }
 
 form.search-form button:active {

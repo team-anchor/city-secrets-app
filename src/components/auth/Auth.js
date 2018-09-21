@@ -21,7 +21,6 @@ class Auth extends PureComponent {
     const redirect = location.state ? location.state.from : '/home';
     if(user) return <Redirect to={redirect}/>;
     
-
     return (
       <div className={styles.auth}>
         <div className="splash-page">

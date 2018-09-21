@@ -45,11 +45,12 @@ class TourDetail extends Component {
                   <div className="stop-text-block">
                     <p className="des" key={i + 1}>{stop.caption}</p>
                   </div>
-                  <p className="address" key={i + 2}>{stop.address}</p>
-                  <span className="map-pin">
-                    <i className="fas fa-map-marker-alt">&nbsp;</i>
-                  </span>
-                  <a target="_blank" rel="noopener noreferrer" href={`https://www.google.com/maps/search/?api=1&query=${searchAddress}`}>View on Google Maps</a>
+                  <p className="address" key={i + 2}>{stop.address}
+                    <span className="map-pin">
+                      <i className="fas fa-map-marker-alt">&nbsp;</i>
+                      <a target="_blank" rel="noopener noreferrer" href={`https://www.google.com/maps/search/?api=1&query=${searchAddress}`}>View on Google Maps</a>
+                    </span>
+                  </p>
                 </div>
               </div>
             );

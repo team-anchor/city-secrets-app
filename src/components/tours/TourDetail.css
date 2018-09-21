@@ -51,7 +51,7 @@
     margin-left: 10px;
   }
 
-  .address {
+  /* .address {
     margin: 5px;
     text-align: center;
     text-align: center;
@@ -60,7 +60,7 @@
     text-shadow: 3px 3px 3px #CCC; 
     color: #333;
     margin: 20px;
-  }
+  } */
   .des {
     margin: 5px;
     text-align: center;
@@ -70,6 +70,7 @@
     text-shadow: 3px 3px 3px #CCC; 
     color: #333;
     margin: 20px;
+  }
     
   .tour-detail p {
     
@@ -79,7 +80,7 @@
     color: #333;
     margin: 0;
     margin-bottom: 10px;
-    }
+  }
 
 .stop-container-ind p {
   text-align: center;

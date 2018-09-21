@@ -12,7 +12,7 @@ class Tour extends Component {
   render() { 
     const { tour } = this.props;
 
-    const { description, _id, name, tourimage, city } = tour;
+    const { description, _id, name, tourimage } = tour;
     console.log(tour);
 
     return ( 

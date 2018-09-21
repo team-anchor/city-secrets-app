@@ -27,4 +27,9 @@ img.covers{
     align-items: flex-start;
     color: white;
   }
+
+  .map-pin {
+    margin-left: 5px;
+    color:#1c819e;
+  }
 }

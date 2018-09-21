@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import FormControl from '../shared/FormControl';
 import { addTour } from './actions';
 
@@ -9,7 +10,8 @@ class AddTour extends PureComponent {
     name: '',
     description: '',
     city: '',
-    tourimage: ''
+    tourimage: '',
+    submitted: false
   };
 
   static propTypes = {
@@ -24,11 +26,12 @@ class AddTour extends PureComponent {
     event.preventDefault();
     const { addTour } = this.props;
     addTour(this.state);
-    this.setState({ name: '', description: '', city: '', tourimage: '' });
+    this.setState({ name: '', description: '', city: '', tourimage: '', submitted: true });
   };
 
   render() {
-    const { name, description, city, tourimage } = this.state;
+    const { name, description, city, tourimage, submitted } = this.state;
+    if(submitted) return <Redirect to="/tours"/>;
 
     return (
       <section>

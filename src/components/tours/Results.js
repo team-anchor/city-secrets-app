@@ -1,8 +1,11 @@
 import React, { Component, Fragment } from 'react';
+import { Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import qs from 'query-string';
-import Tours from './Tours';
+import ToursResults from './ToursResults';
 import { search as searchTours } from '../../services/toursApi';
+import Search from '../search/Search';
+import styles from './Results.css';
 
 class Results extends Component {
 
@@ -68,20 +71,28 @@ class Results extends Component {
             {error && <div>{error}</div>}
           </section>
         }
+        <div className={styles.results}>
+          <div className="search-term">
+            {searchTerm && 
+            <Fragment>
+              <h3>We found these <strong>CitySecrets</strong> in &ldquo;{searchTerm}&rdquo;</h3>
+            </Fragment>
+            }
+          </div>
 
-        {searchTerm && 
-          <Fragment>
-            <p>Searching for &quot;{searchTerm}&quot;</p>
-          </Fragment>
-        }
+  <section className="search-container">
+            <Route component={Search}/>
+          </section>
 
-        <div>
-          {tours 
-            ? <Tours tours={tours}/>
-            : <h1>Please enter a tour name to get started</h1>
-          }
+          <div className="results-container">
+            {tours 
+              ? <ToursResults tours={tours}/>
+              : <h1>Please enter a tour name to get started</h1>
+            }
+          </div>
         </div>
       </section>
+      
     );
   }
 }

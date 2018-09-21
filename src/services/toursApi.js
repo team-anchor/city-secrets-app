@@ -1,4 +1,4 @@
-import { get, post } from './request';
+import { get, post, put, del } from './request';
 
 const URL = '/api';
 const AUTH_URL = `${URL}/auth`;
@@ -9,32 +9,14 @@ const TOURS_URL = `${URL}/tours`;
 export const signup = credentials => post(SIGNUP_URL, credentials);
 export const signin = credentials => post(SIGNIN_URL, credentials);
 
-const getUrl = url => {
-  const json = window.localStorage.getItem(url);
-  if(json) {
-    const response = JSON.parse(json);
-    return Promise.resolve(response);
-  }
-
-  return get(url)
-    .then(response => {
-      window.localStorage.setItem(url, JSON.stringify(response));
-      return response;
-    });
-};
-
 export function search({ search }) {
-  return get(`${TOURS_URL}/name/${search}`);
+  return get(`${TOURS_URL}/city/${search}`);
 }
 
-export function getTours(id) {
-  if(id) {
-    return getUrl(`${TOURS_URL}/id/${id}`);
-  }
-  else {
-    return getUrl(TOURS_URL);
-  }
-}
+export const getTours = () => get(TOURS_URL);
+export const getTour = id => get(`${TOURS_URL}/${id}`);
+export const postTour = data => post(TOURS_URL, data);
+export const updateTour = data => put(TOURS_URL, data);
 
 export const verifyUser = token => {
   return get(`${AUTH_URL}/verify`, {
@@ -42,4 +24,18 @@ export const verifyUser = token => {
       Authorization: token
     }
   });
+};
+
+export const addStopToTour = (tourid, stop) => {
+  const url = `${TOURS_URL}/${tourid}/stops`;
+  return put(url, stop)
+    .then(res => {
+      stop.id = res.name;
+      return stop;
+    });
+};
+
+export const removeStopInTour = (tourid, stopid) => {
+  const url = `${TOURS_URL}/${tourid}/stops/${stopid}`;
+  return del(url);
 };

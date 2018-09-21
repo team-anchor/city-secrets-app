@@ -30,8 +30,9 @@
     padding-left: 5%;
   }
 
-  body {
+  .splash-page {
   background-image: url("../../assets/cover-image-mobile.jpg");
+  height: 100vh;
  } 
   
 }
@@ -46,8 +47,10 @@
     margin: 0;
     
   }
-  body {
+  
+  .splash-page {
     background-image: url("../../assets/cover-image-large.jpg");
+    height: 100vh;
   }
 
   .splash-page img {
@@ -67,7 +70,7 @@
   
 }
 
-@media screen and (min-width: 1201px) {
+@media screen and (min-width: 1401px) {
   .splash-page h1 {
     text-align: center;
     font-size: 7em;    
@@ -77,9 +80,12 @@
     margin: 0;
     
   }
-  body {
+
+  .splash-page {
     background-image: url("../../assets/cover-image-large.jpg");
+    height: 100vh;
   }
+  
 
   .splash-page img {
     display: block;

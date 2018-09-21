@@ -6,8 +6,10 @@ import { tryLoadUser } from '../auth/actions';
 import { getCheckedAuth } from '../auth/reducers';
 import Header from '../header/Header';
 import Home from '../home/Home';
+import About from '../about/About';
 import Auth from '../auth/Auth';
 import Results from '../tours/Results';
+import AddTour from '../tours/AddTour';
 import TourDetail from '../tours/TourDetail';
 import Tours from '../tours/Tours';
 
@@ -25,7 +27,8 @@ class App extends Component {
     const { checkedAuth } = this.props;
     return (
       <Router>
-        <div>
+        <div className="wrapper">
+
           <header>
             <Header onSearch={this.handleSearch}/>
           </header>
@@ -33,15 +36,15 @@ class App extends Component {
           <main>
             {checkedAuth &&
               <Switch>
-                <Route exact path="/" component={Home}/>
+                <Route exact path="/home" component={Home}/>
                 <Route path="/auth" component={Auth}/>
                 <Route exact path="/search" component={Results}/>
-                <Route exact path="/about"/>
+                <Route exact path="/about" component={About}/>
                 <Route exact path="/tour/:id" component={TourDetail}/>   
-                <Route exact path="/tours" component={Tours} />
+                <Route exact path="/tours" component={Tours}/>
+                <Route exact path="/add" component={AddTour}/>
                 <Route exact path="/profile"/>
-
-                <Redirect to="/"/>
+                <Redirect to="/auth/signin"/>
               </Switch>
             }
           </main>

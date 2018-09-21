@@ -5,6 +5,7 @@ import Dropzone from 'react-dropzone';
 import axios from 'axios';
 import FormControl from '../shared/FormControl';
 import { addStop } from './actions';
+import styles from './StopForm.css';
 
 class StopForm extends PureComponent {
   state = {
@@ -61,36 +62,40 @@ class StopForm extends PureComponent {
     const { onCancel, stop } = this.props;
 
     return (
-      <section>
-        <h2>Add a stop</h2>
-        <form onSubmit={this.handleSubmit}>
-          <FormControl label="Address">
-            <input name="address" value={address} onChange={this.handleChange}/>
-          </FormControl>
+      <section className={styles.StopForm}>
+        <div className="add-stop-form-container">
+          <h3>Add a stop</h3>
+          <div className="add-stop-form">
+            <form onSubmit={this.handleSubmit}>
+              <FormControl label="Address">
+                <input name="address" value={address} onChange={this.handleChange}/>
+              </FormControl>
 
-          <Dropzone
-            onDrop={this.handleDrop}
-            multiple
-            accept="image/*"
-          >
-            <p>Drop your files here or click here to upload</p>
-          </Dropzone>
+              <FormControl label="Picture">
+                <input name="picture" value={picture} onChange={this.handleChange}/>
+              </FormControl>
 
-          <p>Add a featured image of your choice by uploading an image above.</p>
-          <p>Alternatively, paste a URL image link below.</p>
+              <Dropzone 
+                onDrop={this.handleDrop}
+                multiple
+                accept="image/*"
+              >
+                <p>Drop your files here or click here to upload</p>
+              </Dropzone>
 
-          <FormControl label="picture">
-            <input name="picture" value={picture} onChange={this.handleChange}/>
-          </FormControl>
+              <p>Add a featured image of your choice by uploading an image above.</p>
+              <p>Alternatively, paste a URL image link below.</p>
 
-          <FormControl label="Caption">
-            <input name="caption" value={caption} onChange={this.handleChange}/>
-          </FormControl>
-          <p>
-            <button type="submit">{stop ? 'Update' : 'Add'}</button>
-            {stop && <button type="button" onClick={onCancel}>Cancel</button>}
-          </p>
-        </form>
+              <FormControl label="Caption">
+                <input name="caption" value={caption} onChange={this.handleChange}/>
+              </FormControl>
+              <p>
+                <button type="submit">{stop ? 'Update' : 'Add'}</button>
+                {stop && <button type="button" onClick={onCancel}>Cancel</button>}
+              </p>
+            </form>
+          </div>
+        </div>
       </section>
     );
   }

@@ -18,10 +18,9 @@ class Auth extends PureComponent {
   
   render() {
     const { user, signin, signup, location } = this.props;
-    const redirect = location.state ? location.state.from : '/home';
+    const redirect = location.state ? location.state.from : '/tours';
     if(user) return <Redirect to={redirect}/>;
     
-
     return (
       <div className={styles.auth}>
         <div className="splash-page">

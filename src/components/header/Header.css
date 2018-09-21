@@ -37,6 +37,16 @@ body {
   padding-top: 8px;
 }
 
+.logo-container-text {
+  font-size: 1.3em;
+  position: absolute;
+  left: 55px;
+  padding-top: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  color: white;
+}
+
 .logo-container img {
   height: 50px;
 }

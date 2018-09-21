@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { NavLink, Route } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getUser } from '../auth/reducers';
 import { logout } from '../auth/actions';
@@ -54,12 +54,12 @@ class Header extends Component {
           {/* <section className="search-container">
             <Route component={Search}/>
           </section> */}
-          <div className="logo-container"><img src={HeaderLogo} /></div>
-
+          <div className="logo-container">
+            <NavLink to="/tours">
+              <img src={HeaderLogo} /><span className="logo-container-text"> CitySecrets</span>
+            </NavLink>
+          </div>
         </section>
-
-        
-
       </div>
     );
   }

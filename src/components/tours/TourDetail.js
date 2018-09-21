@@ -26,25 +26,37 @@ class TourDetail extends Component {
 
   render() {
     const { tour } = this.props;
-    console.log('*** TOUR ***', tour);
     if(!tour) return null;
-
     const { name, description, stops } = tour;
 
     return (
       <div className={styles.tourDetail}>
-        <h1>{name}</h1>
-        <p><strong>description: </strong>{description}</p>
-        {stops.map((stop, i) => {
-          return (
-            <div key={i}>
-              <img className="covers" key={i} src={stop.picture}/>
-              <p key={i + 1}>{stop.address}</p>
-              <p key={i + 2}>{stop.caption}</p>
-            </div>
-          );
-        }
-        )}
+        <div className="tour-detail">
+          <h1>{name}</h1>
+          <p>{description}</p>
+        </div>
+        <div className="stops-container">
+          {stops.map((stop, i) => {
+            const searchAddress = encodeURIComponent(stop.address);
+            return (
+              <div className="stop-container-ind" key={i + 3}>
+                <div>
+                  <img className="covers" src={stop.picture}/>
+                  <div className="stop-text-block">
+                    <p className="des" key={i + 1}>{stop.caption}</p>
+                  </div>
+                  <p className="address" key={i + 2}>{stop.address}
+                    <span className="map-pin">
+                      <i className="fas fa-map-marker-alt">&nbsp;</i>
+                      <a target="_blank" rel="noopener noreferrer" href={`https://www.google.com/maps/search/?api=1&query=${searchAddress}`}>View on Google Maps</a>
+                    </span>
+                  </p>
+                </div>
+              </div>
+            );
+          }
+          )}
+        </div>
         <StopForm tourid={tour._id}/>
       </div>
     );

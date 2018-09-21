@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import PrivateRoute from './PrivateRoute';
 import { connect } from 'react-redux';
 import { tryLoadUser } from '../auth/actions';
 import { getCheckedAuth } from '../auth/reducers';
@@ -38,12 +39,11 @@ class App extends Component {
               <Switch>
                 <Route exact path="/home" component={Home}/>
                 <Route path="/auth" component={Auth}/>
-                <Route exact path="/search" component={Results}/>
+                <PrivateRoute exact path="/search" component={Results}/>
                 <Route exact path="/about" component={About}/>
-                <Route exact path="/tour/:id" component={TourDetail}/>   
-                <Route exact path="/tours" component={Tours}/>
-                <Route exact path="/add" component={AddTour}/>
-                <Route exact path="/profile"/>
+                <PrivateRoute exact path="/tour/:id" component={TourDetail}/>   
+                <PrivateRoute exact path="/tours" component={Tours}/>
+                <PrivateRoute exact path="/add" component={AddTour}/>
                 <Redirect to="/auth/signin"/>
               </Switch>
             }

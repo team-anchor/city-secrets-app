@@ -19,9 +19,9 @@ class Tour extends Component {
         <li className="tourtile">
           <img className="cover" src={tourimage}/>
           <Link to={`/tour/${_id}`}>
-            <div className="star">
+            {/* <div className="star">
               <i className="far fa-star fa-2x"></i>
-            </div>
+            </div> */}
             <div className="textcontainer">
               <h2 className="tourhead">{name}</h2>
               <p className="tour-tile-text">{description}</p>

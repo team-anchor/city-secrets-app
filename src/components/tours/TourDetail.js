@@ -40,18 +40,17 @@ class TourDetail extends Component {
           {stops.map((stop, i) => {
             const searchAddress = encodeURIComponent(stop.address);
             return (
-              <div className="stop-container-ind">
-                <div key={i}>
-                  <img className="covers" key={i} src={stop.picture}/>
+              <div className="stop-container-ind" key={i + 3}>
+                <div>
+                  <img className="covers" src={stop.picture}/>
                   <div className="stop-text-block">
-                  <p key={i + 2}>{stop.caption}</p>
+                    <p key={i + 1}>{stop.caption}</p>
                   </div>
-                  <p key={i + 1}>{stop.address}
-                    <span className="map-pin">
-                      <i className="fas fa-map-marker-alt">&nbsp;</i>
-                    </span>
-                    <a target="_blank" rel="noopener noreferrer" href={`https://www.google.com/maps/search/?api=1&query=${searchAddress}`}>View on Google Maps</a>
-                  </p>
+                  <p key={i + 2}>{stop.address}</p>
+                  <span className="map-pin">
+                    <i className="fas fa-map-marker-alt">&nbsp;</i>
+                  </span>
+                  <a target="_blank" rel="noopener noreferrer" href={`https://www.google.com/maps/search/?api=1&query=${searchAddress}`}>View on Google Maps</a>
                 </div>
               </div>
             );

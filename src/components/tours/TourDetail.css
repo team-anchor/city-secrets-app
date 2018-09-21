@@ -26,12 +26,10 @@
 
 .stops-container img
 {
-  width: 480px;
+  max-width: 480px;
   max-height: 320px;
   margin: 10px;
   border-radius: 5px;
-  width: 800px;
-  height: 500px;
 } 
 
 .tour-detail h1 {

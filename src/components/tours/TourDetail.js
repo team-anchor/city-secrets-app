@@ -39,18 +39,17 @@ class TourDetail extends Component {
           {stops.map((stop, i) => {
             const searchAddress = encodeURIComponent(stop.address);
             return (
-              <div className="stop-container-ind">
-              <div key={i}>
-              <img className="covers" key={i} src={stop.picture}/>
-              <p className="address"key={i + 1}>{stop.address}  <span className="map-pin"><i className="fas fa-map-marker-alt">&nbsp;</i></span><a href="https://goo.gl/maps/AmKdG4j5YWF2" taget="_blank">View on Google Maps</a></p>
-              <p className="des"key={i + 2}>{stop.caption}</p>
+              <div className="stop-container-ind" key={i + 3}>
+                <div>
+                  <img className="covers" src={stop.picture}/>
+                  <div className="stop-text-block">
+                    <p className="des" key={i + 1}>{stop.caption}</p>
                   </div>
-                  <p key={i + 1}>{stop.address}
-                    <span className="map-pin">
-                      <i className="fas fa-map-marker-alt">&nbsp;</i>
-                    </span>
-                    <a target="_blank" rel="noopener noreferrer" href={`https://www.google.com/maps/search/?api=1&query=${searchAddress}`}>View on Google Maps</a>
-                  </p>
+                  <p className="address" key={i + 2}>{stop.address}</p>
+                  <span className="map-pin">
+                    <i className="fas fa-map-marker-alt">&nbsp;</i>
+                  </span>
+                  <a target="_blank" rel="noopener noreferrer" href={`https://www.google.com/maps/search/?api=1&query=${searchAddress}`}>View on Google Maps</a>
                 </div>
               </div>
             );

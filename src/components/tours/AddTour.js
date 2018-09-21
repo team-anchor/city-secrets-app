@@ -74,18 +74,18 @@ class AddTour extends PureComponent {
                 <input name="city" value={city} onChange={this.handleChange}/>
               </FormControl>
       
-              <Dropzone
+              <Dropzone className="Dropzone"
                 onDrop={this.handleDrop}
                 multiple
                 accept="image/*"
               >
-                <p>Drop your files here or click here to upload</p>
+                <p className="p">Drop your files here or click here to upload</p>
               </Dropzone>
 
-              <p>Add a featured image of your choice by uploading an image above.</p>
-              <p>Alternatively, paste a URL image link below.</p>
+              <p className="p">Add a featured image of your choice by uploading an image above.</p>
+              <p className="p">Alternatively, paste a URL image link below.</p>
 
-              <FormControl label="Featured image">
+              <FormControl label="Featured Image">
                 <input name="tourimage" value={tourimage} onChange={this.handleChange}/>
               </FormControl>
               <p>

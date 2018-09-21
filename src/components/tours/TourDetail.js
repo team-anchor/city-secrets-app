@@ -32,24 +32,32 @@ class TourDetail extends Component {
 
     return (
       <div className={styles.tourDetail}>
-        <h1>{name}</h1>
-        <p><strong>description: </strong>{description}</p>
-        {stops.map((stop, i) => {
-          const searchAddress = encodeURIComponent(stop.address);
-          return (
-            <div key={i}>
-              <img className="covers" key={i} src={stop.picture}/>
-              <p key={i + 1}>{stop.address}
-                <span className="map-pin">
-                  <i className="fas fa-map-marker-alt">&nbsp;</i>
-                </span>
-                <a rel="noopener noreferrer" target="_blank" href={`https://www.google.com/maps/search/?api=1&query=${searchAddress}`}>View on Google Maps</a>
-              </p>
-              <p key={i + 2}>{stop.caption}</p>
-            </div>
-          );
-        }
-        )}
+        <div className="tour-detail">
+          <h1>{name}</h1>
+          <p>{description}</p>
+        </div>
+        <div className="stops-container">
+          {stops.map((stop, i) => {
+            const searchAddress = encodeURIComponent(stop.address);
+            return (
+              <div className="stop-container-ind">
+                <div key={i}>
+                  <img className="covers" key={i} src={stop.picture}/>
+                  <div className="stop-text-block">
+                  <p key={i + 2}>{stop.caption}</p>
+                  </div>
+                  <p key={i + 1}>{stop.address}
+                    <span className="map-pin">
+                      <i className="fas fa-map-marker-alt">&nbsp;</i>
+                    </span>
+                    <a target="_blank" rel="noopener noreferrer" href={`https://www.google.com/maps/search/?api=1&query=${searchAddress}`}>View on Google Maps</a>
+                  </p>
+                </div>
+              </div>
+            );
+          }
+          )}
+        </div>
         <StopForm tourid={tour._id}/>
       </div>
     );

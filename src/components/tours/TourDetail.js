@@ -26,7 +26,6 @@ class TourDetail extends Component {
 
   render() {
     const { tour } = this.props;
-    console.log('*** TOUR ***', tour);
     if(!tour) return null;
 
     const { name, description, stops } = tour;

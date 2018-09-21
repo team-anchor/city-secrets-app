@@ -13,7 +13,6 @@ class Tour extends Component {
     const { tour } = this.props;
 
     const { description, _id, name, tourimage } = tour;
-    console.log(tour);
 
     return ( 
       <div className={styles.Tour}>

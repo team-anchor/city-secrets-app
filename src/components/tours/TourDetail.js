@@ -32,18 +32,26 @@ class TourDetail extends Component {
 
     return (
       <div className={styles.tourDetail}>
-        <h1>{name}</h1>
-        <p><strong>description: </strong>{description}</p>
-        {stops.map((stop, i) => {
-          return (
-            <div key={i}>
-              <img className="covers" key={i} src={stop.picture}/>
-              <p key={i + 1}>{stop.address}  <span className="map-pin"><i className="fas fa-map-marker-alt">&nbsp;</i></span><a href="https://goo.gl/maps/AmKdG4j5YWF2" taget="_blank">View on Google Maps</a></p>
-              <p key={i + 2}>{stop.caption}</p>
-            </div>
-          );
-        }
-        )}
+        <div className="tour-detail">
+          <h1>{name}</h1>
+          <p>{description}</p>
+        </div>
+        <div className="stops-container">
+          {stops.map((stop, i) => {
+            return (
+              <div className="stop-container-ind">
+                <div key={i}>
+                  <img className="covers" key={i} src={stop.picture}/>
+                  <div className="stop-text-block">
+                  <p key={i + 2}>{stop.caption}</p>
+                  </div>
+                  <p key={i + 1}>{stop.address}  <span className="map-pin"><i className="fas fa-map-marker-alt">&nbsp;</i></span><a href="https://goo.gl/maps/AmKdG4j5YWF2" target="_blank" rel="noopener noreferrer">View on Google Maps</a></p>
+                </div>
+              </div>
+            );
+          }
+          )}
+        </div>
         <StopForm tourid={tour._id}/>
       </div>
     );

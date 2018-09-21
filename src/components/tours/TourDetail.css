@@ -15,17 +15,24 @@ img.covers{
   margin: 10px;
   border: 5px solid white;
   border-radius: 5px;
+  width: 800px;
+  height: 500px;
 } 
 
   h1 {
     margin: 5px;
-    color: white;
+    text-align: center;
   }
+
+  h2 {
+    margin: 5px;
+    text-align: center;
+  }
+
 
   p {
     margin: 5px;
-    align-items: flex-start;
-    color: white;
+    text-align: center;
   }
 
   .map-pin {

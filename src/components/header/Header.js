@@ -55,10 +55,7 @@ class Header extends Component {
             <Route component={Search}/>
           </section> */}
           <div className="logo-container"><img src={HeaderLogo} /><span className="logo-container-text"> CitySecrets</span></div>
-
         </section>
-
-        
 
       </div>
     );

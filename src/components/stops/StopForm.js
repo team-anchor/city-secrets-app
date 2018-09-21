@@ -64,7 +64,7 @@ class StopForm extends PureComponent {
       <section>
         <h2>Add a stop</h2>
         <form onSubmit={this.handleSubmit}>
-          <FormControl label="address">
+          <FormControl label="Address">
             <input name="address" value={address} onChange={this.handleChange}/>
           </FormControl>
 
@@ -83,7 +83,7 @@ class StopForm extends PureComponent {
             <input name="picture" value={picture} onChange={this.handleChange}/>
           </FormControl>
 
-          <FormControl label="caption">
+          <FormControl label="Caption">
             <input name="caption" value={caption} onChange={this.handleChange}/>
           </FormControl>
           <p>

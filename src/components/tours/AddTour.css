@@ -5,3 +5,21 @@
   justify-content: center;
   align-items: center;
 }
+input{
+  font-family: inherit;
+  font-size: var(--inputFontSize);
+  border-radius: 0.3rem;
+}
+button{
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid silver;
+}
+button:hover {
+  border-top-color: maroon;
+  background: maroon;
+  color: white;
+}
+label{
+  font-size: 20px;
+}

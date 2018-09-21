@@ -44,7 +44,6 @@ class App extends Component {
                 <PrivateRoute exact path="/tour/:id" component={TourDetail}/>   
                 <PrivateRoute exact path="/tours" component={Tours}/>
                 <PrivateRoute exact path="/add" component={AddTour}/>
-                <PrivateRoute exact path="/profile"/>
                 <Redirect to="/auth/signin"/>
               </Switch>
             }

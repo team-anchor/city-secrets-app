@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { NavLink, Route } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getUser } from '../auth/reducers';
 import { logout } from '../auth/actions';
 import HeaderLogo from '../../assets/header-logo.png';
 import styles from './Header.css';
-import Search from '../search/Search';
 
 class Header extends Component {
   static propTypes = {
@@ -33,11 +32,6 @@ class Header extends Component {
               </li>
               {user &&
                 <li>
-                  <NavLink to="/profile">Profile</NavLink>
-                </li>
-              }
-              {user &&
-                <li>
                   <NavLink to="/tours">Tours</NavLink>
                 </li>
               }
@@ -55,14 +49,9 @@ class Header extends Component {
             </ul>
           </nav>
           {user && <span className="logged-in-name">Logged in as {user.user.name}</span>}
-          <section className="search-container">
-            <Route component={Search}/>
-          </section>
           <div className="logo-container"><img src={HeaderLogo} /></div>
 
         </section>
-
-        
 
       </div>
     );

@@ -80,14 +80,14 @@ class Results extends Component {
             }
           </div>
 
-  <section className="search-container">
+          <section className="onpage-search-container">
             <Route component={Search}/>
           </section>
 
           <div className="results-container">
             {tours 
               ? <ToursResults tours={tours}/>
-              : <h1>Please enter a tour name to get started</h1>
+              : <h1>We don&lsquo;t have anything yet for {searchTerm}. Please try again.</h1>
             }
           </div>
         </div>

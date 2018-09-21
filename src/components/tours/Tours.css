@@ -6,6 +6,7 @@ ul.tours-container li {
 
 ul.tours-container {
   display: flex;
+  flex-wrap: wrap;
   list-style: none;
   
 }

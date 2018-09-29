@@ -1,7 +1,7 @@
 CitySecrets
 =====
 
-[Live](https://citysecrets.herokuapp.com)
+[Live link](https://citysecrets.herokuapp.com)
 
 [Server repo](https://github.com/team-anchor/city-secrets-server)
 

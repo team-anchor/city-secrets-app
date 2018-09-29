@@ -1,6 +1,9 @@
 CitySecrets
 =====
 
+[Live](https://citysecrets.herokuapp.com)
+[Server repo](https://github.com/team-anchor/city-secrets-server)
+
 CitySecrets is a photo-driven web app for exploring little-known features of cities you live in or visit. It was made using React/Redux for the frontend and Mongo/Node/Express for the backend, and tested with Mocha/Chai.
 
 ## Get Started
